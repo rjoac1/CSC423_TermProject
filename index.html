@@ -7,21 +7,38 @@
 </head>
 <body>
 <div class="buttonSection">
-    <h2>ADD NEW</h2>
-    <input type="button" value="Add Item" onclick="window.location='new_item_ui.php'"/><br /><br />
-    <input type="button" value="Add Promotion" onclick="window.location='new_promotion_ui.php'"/><br /><br />
-    <input type="button" value="Add Event" onclick="window.location='new_event_ui.php'"/><br /><br />
-    <hr />
-
-    <h2>UPDATE</h2>
-    <input type="button" value="Update Item" /><br /><br />
-    <input type="button" value="Update Promotion" /><br /><br />
-    <input type="button" value="Update Event" /><br /><br />
-    <hr />
-
-    <h2>REPORTS</h2>
-    <input type="button" value="Add Item to Promotion" /><br /><br />
-    <hr />
+    <table>
+        <tr>
+            <td>
+                <input type="button" value="Add Item" onclick="window.location='new_item_ui.php'">
+            </td>
+            <td>
+                <input type="button" value="Add Promotion" onclick="window.location='new_promotion_ui.php'">
+            </td>
+            <td>
+                <input type="button" value="Add Event" onclick="window.location='new_event_ui.php'">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Update Item">
+            </td>
+            <td>
+                <input type="button" value="Update Promotion">
+            </td>
+            <td>
+                <input type="button" value="Update Event" >
+            </td>
+        </tr>
+        <tr colspan=3>
+            <center>
+                <td></td>
+                <td>
+                    <input type="button" value="Add Item to Promotion">
+                </td>
+                <td></td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
