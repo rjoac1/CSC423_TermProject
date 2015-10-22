@@ -30,6 +30,7 @@ function insert_item()
     // Get the information entered into the webpage by the user
     // These are available in the super global variable $_POST
     // This is actually an associative array, indexed by a string
+    $itemNumber = $_POST['itemNumber'];
     $itemDescription = $_POST['itemDescription'];
     $category = $_POST['category'];
     $departmentName = $_POST['departmentName'];
@@ -39,8 +40,8 @@ function insert_item()
     // Create a String consisting of the SQL command. Remember that
     // . is the concatenation operator. $varname within double quotes
     // will be evaluated by PHP
-    $insertStmt = "insert Item (ItemDescription, Category, DepartmentName,
-		       PurchaseCost, FullRetailPrice) values ( '$itemDescription', '$category',
+    $insertStmt = "INSERT INTO Item (ItemNumber, ItemDescription, Category, DepartmentName,
+		       PurchaseCost, FullRetailPrice) values ( '$itemNumber','$itemDescription', '$category',
                       '$departmentName', '$purchaseCost', '$retailPrice')";
 
     //Execute the query. The result will just be true or false
@@ -58,7 +59,7 @@ function insert_item()
 
     }
 
-    ui_show_item_insert_result($message, $itemDescription, $category,
+    ui_show_item_insert_result($message, $itemNumber, $itemDescription, $category,
         $departmentName, $purchaseCost, $retailPrice);
 
 }

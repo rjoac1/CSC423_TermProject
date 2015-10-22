@@ -23,6 +23,11 @@ function ui_show_new_item_form()
     echo "<table>";
 
     echo '<tr>';  //
+    echo '<TD><SPAN ALIGN=RIGHT>Item Number:</SPAN></TD>';
+    echo '<TD><INPUT NAME="itemNumber" TYPE="text" SIZE=50/></TD>';
+    echo '</tr>';
+
+    echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Item Description:</SPAN></TD>';
     echo '<TD><INPUT NAME="itemDescription" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';

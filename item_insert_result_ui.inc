@@ -6,7 +6,7 @@
  * Time: 3:16 PM
  */
 
-function ui_show_item_insert_result($message, $itemDescription, $category,
+function ui_show_item_insert_result($message, $itemNumber, $itemDescription, $category,
                                     $departmentName, $purchaseCost, $retailPrice)
 {
     //----------------------------------------------------------
