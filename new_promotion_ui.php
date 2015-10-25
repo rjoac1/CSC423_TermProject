@@ -38,7 +38,7 @@ function ui_show_new_promotion_form()
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Promotion Type:</SPAN></TD>';
-    echo '<TD><select>
+    echo '<TD><select INPUT NAME="promotionType">
               <option value="Dollar">Dollar</option>
               <option value="Percent">Percent</option>
               </select>
