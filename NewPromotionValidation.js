@@ -23,7 +23,6 @@ function checkName(){
         return false;
     }
     else{
-        alert("Test success");
         return true;
     }
 
@@ -42,7 +41,6 @@ function checkDescription() {
         return false;
     }
     else {
-        alert("Test success");
         return true;
     }
 
@@ -61,7 +59,6 @@ function checkAmountOff(){
         return false;
     }
     else{
-        alert("Test success");
         return true;
     }
 
