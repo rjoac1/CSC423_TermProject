@@ -22,11 +22,6 @@ function ui_show_new_promotion_form()
     echo "<table>";
 
     echo '<tr>';  //
-    echo '<TD><SPAN ALIGN=RIGHT>Promotion Code:</SPAN></TD>';
-    echo '<TD><INPUT NAME="promotionNumber" TYPE="text" SIZE=50/></TD>';
-    echo '</tr>';
-
-    echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Promotion Name:</SPAN></TD>';
     echo '<TD><INPUT NAME="promotionName" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
