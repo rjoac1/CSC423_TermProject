@@ -47,7 +47,7 @@ function ui_show_new_promotion_form()
 
     echo "</table>";
     echo '<input type="reset" value="Reset" />';
-    echo '<input type="submit" value="Submit New Promotion Data" onclick="return validate()" />';
+    echo '<input type="submit" value="Submit New Item Data" onclick="return validate()" />';
 
     echo "</FORM>";
     echo "</BODY>";
