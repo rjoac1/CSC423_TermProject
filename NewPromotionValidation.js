@@ -8,7 +8,7 @@
 function validate(){
     alert("Start test");
     //checkName() && checkDescription() && checkAmountOff()
-    return (checkName() && checkDescription() && checkAmountOff());
+    return checkName() && checkDescription() && checkAmountOff();
 }//end method
 
 function checkName(){
@@ -17,7 +17,7 @@ function checkName(){
 
     if(name.length == 0){
         alert("Please enter in Promotion Name");
-        return false
+        return false;
     }
     else if(name.match(/^[A-Za-z]*$/) == null) {
         alert("Incorrect Promotion Name format");
