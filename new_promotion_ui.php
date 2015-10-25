@@ -38,12 +38,16 @@ function ui_show_new_promotion_form()
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Promotion Type:</SPAN></TD>';
-    echo '<TD><INPUT NAME="promotionType" TYPE="text" SIZE=50/></TD>';
+    echo '<TD><select>
+              <option value="Dollar">Dollar</option>
+              <option value="Percent">Percent</option>
+              </select>
+          </TD>';
     echo '</tr>';
 
     echo "</table>";
     echo '<input type="reset" value="Reset" />';
-    echo '<input type="submit" value="Submit New Item Data" onclick="return validate()" />';
+    echo '<input type="submit" value="Submit New Promotion Data" onclick="return validate()" />';
 
     echo "</FORM>";
     echo "</BODY>";
