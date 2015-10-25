@@ -25,7 +25,7 @@ function checkName(){
     else{
         return true;
     }
-
+//p
 }//end method
 
 function checkDescription() {
