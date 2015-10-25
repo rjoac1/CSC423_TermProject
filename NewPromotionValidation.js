@@ -6,20 +6,19 @@
  */
 
 function validate(){
-    alert("Start test");
     //checkName() && checkDescription() && checkAmountOff()
     return checkName() && checkDescription() && checkAmountOff();
 }//end method
 
 function checkName(){
-    alert("Test Name");
+
     var name = document.getElementById("promotionName").value;
 
     if(name.length == 0){
         alert("Please enter in Promotion Name");
         return false;
     }
-    else if(name.match(/^[A-Za-z]*$/) == null) {
+    else if(name.match(/^[\w\s\$]*$/) == null) {
         alert("Incorrect Promotion Name format");
         return false;
     }
@@ -32,15 +31,14 @@ function checkName(){
 
 function checkDescription() {
 
-    alert("Test Description");
     var description = document.getElementById("promotionDescription").value;
 
     if (description.length == 0) {
         alert("Please enter in Promotion Name");
         return false
     }
-    else if (description.match(/^[A-Za-z]*$/) == null) {
-        alert("Incorrect Promotion Name format");
+    else if (description.match(/^[\w\s\$]*$/) == null) {
+        alert("Incorrect Promotion Description format");
         return false;
     }
     else {
@@ -51,7 +49,7 @@ function checkDescription() {
 }//end method
 
 function checkAmountOff(){
-    alert("Test AmountOff");
+
     var amountOff = document.getElementById("promotionValue").value;
 
     if(amountOff.length == 0){
@@ -59,7 +57,7 @@ function checkAmountOff(){
         return false
     }
     else if(amountOff.match(/^[\d]*$/) == null) {
-        alert("Incorrect Promotion Name format");
+        alert("Incorrect promotion amount off format");
         return false;
     }
     else{
