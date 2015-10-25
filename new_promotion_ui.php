@@ -23,22 +23,22 @@ function ui_show_new_promotion_form()
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Promotion Name:</SPAN></TD>';
-    echo '<TD><INPUT NAME="promotionName" TYPE="text" SIZE=50/></TD>';
+    echo '<TD><INPUT ID="promotionName"TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Promotion Description:</SPAN></TD>';
-    echo '<TD><INPUT NAME="promotionDescription" TYPE="text" SIZE=50/></TD>';
+    echo '<TD><INPUT ID="promotionDescription" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Amount Off:</SPAN></TD>';
-    echo '<TD><INPUT NAME="promotionValue" TYPE="text" SIZE=50/></TD>';
+    echo '<TD><INPUT ID="promotionValue" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Promotion Type:</SPAN></TD>';
-    echo '<TD><INPUT NAME="promotionType" TYPE="text" SIZE=50/></TD>';
+    echo '<TD><INPUT ID="promotionType" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
 
     echo "</table>";
