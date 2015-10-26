@@ -28,7 +28,7 @@ function ui_show_items_retrieved($message, $items_retrieved_result)
     echo "<h3>CHOOSE ITEM TO ADD TO PROMOTION</h3>'";
     echo <<<END
     <form action="search_promotions_ui.php" method="post">
-    <table>
+    <table border="1" cellspacing="0" cellpadding="5px">
     <tr>
     <th>Item Number</th>
     <th>Item Description</th>
@@ -49,7 +49,7 @@ END;
 
         echo "<tr>";
 
-        echo "<td><INPUT TYPE='submit' NAME='itemNumber' VALUE='$itemNumber' /></td>";
+        echo "<td><center><INPUT TYPE='submit' NAME='itemNumber' VALUE='$itemNumber' /></center></td>";
         echo "<td>$itemDescription</td>";
         echo "<td>$category</td>";
         echo "<td>$deptartmentName</td>";

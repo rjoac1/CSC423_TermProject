@@ -29,7 +29,7 @@ function ui_show_promotions_retrieved($message, $promotions_retrieved_result, $i
     echo <<<END
     <form action="add_item_to_promotion.php" method="post">
     <input type="hidden" name="itemNumber" value="$item_number" />
-    <table>
+    <table border="1" cellspacing="0" cellpadding="5px">
     <tr>
     <th>Promo Code</th>
     <th>Name</th>
@@ -48,7 +48,7 @@ END;
 
         echo "<tr>";
 
-        echo "<td><INPUT TYPE='submit' NAME='promoCode' VALUE='$promoCode' /></td>";
+        echo "<td><center><INPUT TYPE='submit' NAME='promoCode' VALUE='$promoCode' /></center></td>";
         echo "<td>$name</td>";
         echo "<td>$description</td>";
         echo "<td>$amountOff</td>";
