@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="holly2.brockport.edu">
-    <serverData>
-      <paths name="holly2.brockport.edu">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/public_html/csc423/TermProject" local="$PROJECT_DIR$" web="/~vle1/csc423/TermProject" />
-          </mappings>
-        </serverdata>
-      </paths>
-    </serverData>
-  </component>
+  <component name="PublishConfigData" serverName="holly2.brockport.edu" />
 </project>
