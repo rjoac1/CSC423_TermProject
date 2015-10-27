@@ -51,12 +51,11 @@ function insert_item()
 
     if (!$result)
     {
-        $message = "Error in inserting Item: $itemDescription , $category, $departmentName: ". mysql_error();
+        $message = "Error in inserting Item. <br />Item Description: $itemDescription <br />Category: $category <br />Department Name: $departmentName ". mysql_error();
     }
     else
     {
-        $message = "Data for Item: $itemDescription , $category, $departmentName, inserted successfully.";
-
+        $message = "Data for Item inserted successfully. <br />Item Description: $itemDescription <br />Category: $category <br />Department Name: $departmentName";
     }
 
     ui_show_item_insert_result($message, $itemNumber, $itemDescription, $category,

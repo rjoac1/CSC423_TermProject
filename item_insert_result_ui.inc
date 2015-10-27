@@ -22,7 +22,7 @@ function ui_show_item_insert_result($message, $itemNumber, $itemDescription, $ca
     {
         if ($message != "")
         {
-            echo '<center><font color="blue">'.$message.'</font></center><br />';
+            echo '<p><center><font color="blue">'.$message.'</font></center></p><br />';
         }
     }
 

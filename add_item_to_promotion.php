@@ -8,7 +8,7 @@
 
 require('db_access.inc');
 require('db_cn.inc');
-require('insert_promotion_item_insert_result_ui.inc');
+require('promotionItem_insert_result_ui.inc');
 
 //Main control function
 add_item_to_promotion();
@@ -37,26 +37,28 @@ function add_item_to_promotion()
 
     if (!$result)
     {
-        $message = "Error in inserting PromotionItem: $promoCode, $itemNumber, $salePrice: ". mysql_error();
+        $message = "Error adding Item to Promotion. <br />Promo Code: $promoCode<br />Item Number:
+        $itemNumber<br />Sale Price: $salePrice<br />". mysql_error();
     }
     else
     {
-        $message = "Data for Promotion inserted successfully.\n\tPromo Code: $promoCode\n\tItem Number: $itemNumber\n\tSale Price: $salePrice";
+        $message = "Item added to Promotion successfully.<br />Promo Code: $promoCode<br />Item Number:
+        $itemNumber<br />Sale Price: $salePrice";
     }
 
     ui_show_promotion_item_insert_result($message);
 }
 function getSalePrice($item_retail_price, $promoType, $amountOff)
 {
-    echo "PromoType: $promoType\nAmount off: $amountOff\nRetail Price: $item_retail_price\n";
+    //echo "PromoType: $promoType\nAmount off: $amountOff\nRetail Price: $item_retail_price\n";
     if($promoType == "Percent")
     {
         $result = ($item_retail_price - ($amountOff * $item_retail_price));
-        echo "Percent result: $result";
+        //echo "Percent result: $result";
     }
     else{
         $result = ($item_retail_price - $amountOff);
-        echo "Dollar result: $result";
+        //echo "Dollar result: $result";
     }
     //$result = round($result, 2);
     return $result;

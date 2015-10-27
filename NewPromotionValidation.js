@@ -65,7 +65,7 @@ function checkAmountOff(){
     //Changed regular expression here to require number to be 0.00 form.
     //The Project description stated otherwise but the database had values in the 0.00 form.
     //Asked mitra about this and he said it was our choice. Since we need a common form for the calculations later on, Van and I decided to go with this form. ~RJ and VL
-    else if(amountOff.match(/^[\d]*.[\d]{2}$/) == null) {
+    else if(amountOff.match(/^[\d]+\.[\d]{2}$/) == null) {
         alert("Amount off for promotion must be a number rounded to two decimal places. (i.e. 0.00)");
         return false;
     }

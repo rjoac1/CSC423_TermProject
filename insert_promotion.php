@@ -52,11 +52,11 @@ function insert_promotion()
 
     if (!$result)
     {
-        $message = "Error in inserting Promotion. Promotion Description: $promotionDescription Promotion Type: $promotionType Promotion Name: $promotionName Amount Off: $promotionValue ". mysql_error();
+        $message = "Error in inserting Promotion. <br />Promotion Description: $promotionDescription <br />Promotion Type: $promotionType <br />Promotion Name: $promotionName <br />Amount Off: $promotionValue<br />". mysql_error();
     }
     else
     {
-        $message = "Data for Promotion inserted successfully. Promotion Description: $promotionDescription Promotion Type: $promotionType Promotion Name: $promotionName Amount Off: $promotionValue";
+        $message = "Data for Promotion inserted successfully. <br />Promotion Description: $promotionDescription <br />Promotion Type: $promotionType <br />Promotion Name: $promotionName <br />Amount Off: $promotionValue";
 
     }
 

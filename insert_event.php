@@ -46,11 +46,14 @@ function insert_event()
 
     if (!$result)
     {
-        $message = "Error in inserting Event: $eventName , $startDate , $endDate: ". mysql_error();
+        $message = "Error in inserting Event: <br />Event Name: $eventName<br />Start Date: $startDate<br />End Date:
+$endDate<br />". mysql_error();
     }
     else
     {
-        $message = "Data for Event: $eventName , $startDate , $endDate inserted successfully.";
+        $message = "Data for Event inserted successfully.<br />Event Name: $eventName<br />Start Date: $startDate<br />End
+Date:
+$endDate<br />";
 
     }
 
