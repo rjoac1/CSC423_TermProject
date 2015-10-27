@@ -14,7 +14,7 @@ function ui_show_new_item_form()
     //Create an HTML document using the ECHO statements
     echo "<HTML>";
     echo "<HEAD>";
-    echo "<script type='text/javascript' src='NewItemValidation.js'>  </script>";
+    echo "<script type='text/javascript' src='NewItemValidation.js'> </script>";
     echo "</HEAD>";
     echo "<BODY>";
     echo "<BR/>";
@@ -52,7 +52,7 @@ function ui_show_new_item_form()
     echo '</tr>';
     echo "</table>";
     echo '<input type="reset" value="Reset" />';
-    echo '<input type="submit" value="Submit New Item Data" onclick="return validate()" />';
+    echo '<input type="submit" value="Submit New Item Data" onclick="return validate();" />';
 
     echo "</FORM>";
     echo "</BODY>";
