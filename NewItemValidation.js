@@ -29,7 +29,7 @@ function checkItemNumber()
         }
         else if (enteredItemNumber.match(/^[0-9]{1,7}$/) == null)
         {
-                alert("Item Number must be a numerical value.");
+                alert("Item Number must be a numerical value up to 7 digits.");
                 return false;
         }
         return true;
