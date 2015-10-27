@@ -24,10 +24,10 @@ function checkItemNumber()
         //alert(enteredItemNumber);
         if(enteredItemNumber.length == 0 || enteredItemNumber == "")
         {
-                alert("Please enter an Item Number.");
+                alert("Please enter an Item Number up to 7 digits.");
                 return false;
         }
-        else if (enteredItemNumber.match(/^[0-9]+$/) == null)
+        else if (enteredItemNumber.match(/^[0-9]{1,7}$/) == null)
         {
                 alert("Item Number must be a numerical value.");
                 return false;
