@@ -10,6 +10,7 @@
  */
 
 require('db_cn.inc');
+require('db_access.inc');
 
 //This file contains php code that will be executed after the
 //insert operation is done.
@@ -51,35 +52,17 @@ function insert_promotion()
 
     if (!$result)
     {
-        $message = "Error in inserting Item: $promotionDescription, $promotionType, $promotionName ". mysql_error();
+        $message = "Error in inserting Promotion. Promotion Description: $promotionDescription Promotion Type: $promotionType Promotion Name: $promotionName Amount Off: $promotionValue ". mysql_error();
     }
     else
     {
-        $message = "Data for Item: $promotionDescription , $promotionType, $promotionName, inserted successfully.";
+        $message = "Data for Promotion inserted successfully. Promotion Description: $promotionDescription Promotion Type: $promotionType Promotion Name: $promotionName Amount Off: $promotionValue";
 
     }
 
     ui_show_promotion_insert_result($message, $promotionNumber, $promotionName, $promotionDescription,
         $promotionValue, $promotionType);
 
-}
-
-function connect_and_select_db($server, $username, $pwd, $dbname)
-{
-    // Connect to db server
-    $conn = mysql_connect($server, $username, $pwd);
-
-    if (!$conn) {
-        echo "Unable to connect to DB: " . mysql_error();
-        exit;
-    }
-
-    // Select the database
-    $dbh = mysql_select_db($dbname);
-    if (!$dbh){
-        echo "Unable to select ".$dbname.": " . mysql_error();
-        exit;
-    }
 }
 
 ?>
