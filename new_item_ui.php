@@ -5,19 +5,17 @@
  * Date: 10/21/2015
  * Time: 3:02 PM
  */
+require('ui_utilities.inc');
 //------------------------------------------------------------
 // Main Control Logic: It just calls a function
 ui_show_new_item_form();
 //------------------------------------------------------------
 function ui_show_new_item_form()
 {
-    //Create an HTML document using the ECHO statements
-    echo "<HTML>";
-    echo "<HEAD>";
-    echo "<script type='text/javascript' src='NewItemValidation.js'> </script>";
-    echo "</HEAD>";
-    echo "<BODY>";
-    echo "<BR/>";
+    $script = "<script type='text/javascript' src='NewItemValidation.js'> </script>";
+    ui_print_header_with_head_elements("Add New Item", $script);
+
+
     echo "<FORM action='insert_item.php' method='post'>";
     echo "<table>";
 

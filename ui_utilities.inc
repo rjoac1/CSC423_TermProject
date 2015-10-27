@@ -12,6 +12,10 @@ function ui_print_header($title)
 }
 function ui_print_header_with_head_elements($title, $args)
 {
+    if(!(is_array($args)))
+    {
+        $args = array($args);
+    }
     echo <<<END
     <!DOCTYPE html>
     <html lang="en">
@@ -31,6 +35,7 @@ END;
     <h1>Retail Advertising Data Management System</h1>
     <hr />
     <h2>$title</h2>
+    <br />
 EOD;
 }
 
