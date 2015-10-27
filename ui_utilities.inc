@@ -32,9 +32,13 @@ END;
     echo <<<EOD
     </head>
     <body>
+    <center>
     <h1>Retail Advertising Data Management System</h1>
+    </center>
     <hr />
+    <center>
     <h2>$title</h2>
+    </center>
     <br />
 EOD;
 }

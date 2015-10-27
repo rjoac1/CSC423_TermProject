@@ -1,5 +1,7 @@
 <?php
 
+require('ui_utilities.inc');
+
 //------------------------------------------------------------
 // Main Control Logic: It just calls a function
 ui_show_new_event_form();
@@ -8,10 +10,11 @@ ui_show_new_event_form();
 function ui_show_new_event_form()
 {
     //Create an HTML document using the ECHO statements
-    echo "<HTML>";
-    echo "<HEAD>";
-    echo "<script type='text/javascript' src='ValidateEvent.js'>  </script>";
-    echo "</HEAD>";
+    $script = "<script type='text/javascript' src='ValidateEvent.js'>  </script>";
+
+    ui_print_header_with_head_elements("ADD A NEW EVENT", $script);
+
+    echo "<div class='center'>";
     echo "<BODY>";
     echo "<BR/>";
     echo "<FORM action='insert_event.php' method='post'>";
@@ -46,11 +49,16 @@ function ui_show_new_event_form()
     echo '<TD><SPAN ALIGN=RIGHT>Type:</SPAN></TD>';
     echo '<TD><INPUT ID="type" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
+
+    echo '<tr>';
+    echo '<td><input type="reset" value="Reset" /></td>';
+    echo '<td><input type="submit" onclick="return validateForm();" value="Submit New Event Data" /></td>';
+    echo '</tr>';
+
     echo "</table>";
-    echo '<input type="reset" value="Reset" />';
-    echo '<input type="submit" onclick="return validateForm();" value="Submit New Event Data" />';
 
     echo "</FORM>";
-    echo "</BODY>";
-    echo "</HTML>";
+    echo "</div>";
+
+    ui_print_footer_with_main_menu_button();
 }

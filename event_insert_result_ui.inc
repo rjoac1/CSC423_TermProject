@@ -1,6 +1,6 @@
 <?php
 
-function ui_show_event_insert_result($eventCode, $eventName, $startDate, $endDate,
+function ui_show_event_insert_result($message, $eventCode, $eventName, $startDate, $endDate,
                                      $description, $type)
 {
     //----------------------------------------------------------

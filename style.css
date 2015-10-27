@@ -4,6 +4,12 @@ body{
     margin-right:auto;
 }
 
+.center{
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
 .buttonSection{
     text-align: center;
 }
