@@ -26,7 +26,7 @@ function get_items_matching_search_criteria()
         WHERE  ItemNumber LIKE '%".$itemNumber."%'
         AND ItemDescription LIKE '%".$itemDescription."%'
         AND Category LIKE '%".$category."%'
-        AND DepartmentName LIKE '%".$departmentName."%'";
+        AND DepartmentName LIKE '%".$departmentName."'";
 
     $error_message = "Could not successfully run query ($sql) from DB: ";
 

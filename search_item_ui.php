@@ -19,6 +19,7 @@ function ui_show_search_item_form()
     echo "</HEAD>";
     echo "<BODY>";
     echo "<H1>Search for Item to Add to Promotion</H1>";
+    echo "<H2>Enter keywords for item search. Some fields may be left blank.</H2>";
     echo "<BR/>";
     echo "<FORM action='retrieve_items.php' method='post'>";
     echo "<table>";

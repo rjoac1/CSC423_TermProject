@@ -41,21 +41,25 @@ function add_item_to_promotion()
     }
     else
     {
-        $message = "Data for Promotion: $promoCode, $itemNumber, $salePrice inserted successfully.";
-
+        $message = "Data for Promotion inserted successfully.\n\tPromo Code: $promoCode\n\tItem Number: $itemNumber\n\tSale Price: $salePrice";
     }
 
     ui_show_promotion_item_insert_result($message);
 }
 function getSalePrice($item_retail_price, $promoType, $amountOff)
 {
-    if($promoType = "Percent")
+    echo "PromoType: $promoType\nAmount off: $amountOff\nRetail Price: $item_retail_price\n";
+    if($promoType == "Percent")
     {
-        return $item_retail_price - ($amountOff * $item_retail_price);
+        $result = ($item_retail_price - ($amountOff * $item_retail_price));
+        echo "Percent result: $result";
     }
     else{
-        return $item_retail_price - $amountOff;
+        $result = ($item_retail_price - $amountOff);
+        echo "Dollar result: $result";
     }
+    //$result = round($result, 2);
+    return $result;
 }
 function getItemRetailPrice($itemNum)
 {
