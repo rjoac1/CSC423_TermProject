@@ -5,6 +5,7 @@
 <?php
 
 require('db_cn.inc');
+require('db_access.inc');
 
 //This file contains php code that will be executed after the
 //insert operation is done.
@@ -35,8 +36,8 @@ function insert_event()
     // Create a String consisting of the SQL command. Remember that
     // . is the concatenation operator. $varname within double quotes
     // will be evaluated by PHP
-    $insertStmt = "INSERT INTO Event (EventCode, EventName, StartDate, EndDate,
-		       Description, Type) values ( '$eventCode', '$eventName', '$startDate,
+    $insertStmt = "INSERT INTO AdEvent (EventCode, AdEvent.Name, StartDate, EndDate,
+		       Description, AdType) values ( '$eventCode', '$eventName', '$startDate',
                       '$endDate', '$description', '$type')";
 
     //Execute the query. The result will just be true or false
@@ -52,32 +53,13 @@ $endDate<br />". mysql_error();
     else
     {
         $message = "Data for Event inserted successfully.<br />Event Name: $eventName<br />Start Date: $startDate<br />End
-Date:
-$endDate<br />";
+Date: $endDate<br />";
 
     }
 
     ui_show_event_insert_result($message, $eventName, $startDate,
         $endDate, $description, $type);
 
-}
-
-function connect_and_select_db($server, $username, $pwd, $dbname)
-{
-    // Connect to db server
-    $conn = mysql_connect($server, $username, $pwd);
-
-    if (!$conn) {
-        echo "Unable to connect to DB: " . mysql_error();
-        exit;
-    }
-
-    // Select the database
-    $dbh = mysql_select_db($dbname);
-    if (!$dbh){
-        echo "Unable to select ".$dbname.": " . mysql_error();
-        exit;
-    }
 }
 
 ?>
