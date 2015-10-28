@@ -2,9 +2,11 @@ body{
     width:80%;
     margin-left:auto;
     margin-right:auto;
+    text-align: center;
 }
 
 .center{
+    display:inline-block;
     margin: auto;
     width: 60%;
     padding: 10px;

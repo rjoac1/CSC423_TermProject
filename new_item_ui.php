@@ -51,7 +51,8 @@ function ui_show_new_item_form()
 
     echo '<tr>';  //
     echo '<TD align="right"><input type="reset" value="Reset" /></TD>';
-    echo '<TD align="right"><input type="submit" value="Submit New Item Data" onclick="return validateItemData()" /></TD>';
+    echo '<TD align="right"><input type="submit" value="Submit New Item Data" onclick="return validateItemData()"
+    /></TD>';
     echo '</tr>';
 
     echo "</table>";

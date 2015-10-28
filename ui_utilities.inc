@@ -63,7 +63,6 @@ function ui_print_body_header($title){
     <hr />
     <h2>$title</h2>
     <br />
-    </center>
 BODYHEADER;
 }
 
@@ -82,6 +81,7 @@ END;
 
 function ui_print_footer()
 {
+    echo "</center>";
     echo "</body>";
     echo "</html>";
 }
