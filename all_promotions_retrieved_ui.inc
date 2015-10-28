@@ -14,7 +14,7 @@ function ui_show_promotions_retrieved($message, $promotions_retrieved_result, $i
 
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname
-    echo "<h3>Select Promotion you wish to add Item to.</h3>'";
+    echo "<center><h3>Select Promotion you wish to add Item to.</h3></center>";
     if ($message)
     {
         if ($message != "")
@@ -24,6 +24,7 @@ function ui_show_promotions_retrieved($message, $promotions_retrieved_result, $i
     }
 
     echo <<<END
+    <div class="center">
     <form action="add_item_to_promotion.php" method="post">
     <input type="hidden" name="itemNumber" value="$item_number" />
     <table border="1" cellspacing="0" cellpadding="5px">
@@ -56,13 +57,12 @@ END;
 
     echo "</table>";
     echo "</form>";
+    echo "</div>";
 
     echo <<<END
-    <br />
-    <input type="button" value="Return to Main Menu" onClick="window.location='index.html'"/>
-    </body>
-    </html>
+
 END;
 
+    ui_print_footer_with_main_menu_button();
 }
 ?>

@@ -17,6 +17,7 @@ function ui_show_new_promotion_form()
     $script = "<script type='text/javascript' src='NewPromotionValidation.js'>  </script>";
     ui_print_header_with_head_elements("ADD NEW PROMOTION", $script);
 
+    echo "<div class='center'>";
     echo "<FORM action='insert_promotion.php' method='post'>";
     echo "<table>";
 
@@ -44,10 +45,14 @@ function ui_show_new_promotion_form()
           </TD>';
     echo '</tr>';
 
-    echo "</table>";
-    echo '<input type="reset" value="Reset" />';
-    echo '<input type="submit" value="Submit New Promotion Data" onclick="return validate()" />';
+    echo '<tr>';  //
+    echo '<TD align="right"><input type="reset" value="Reset" /></TD>';
+    echo '<TD align="right"><input type="submit" value="Submit New Promotion Data" onclick="return validate()" /></TD>';
+    echo '</tr>';
 
+    echo "</table>";
     echo "</FORM>";
+    echo "</div>";
+
     ui_print_footer_with_main_menu_button();
 }

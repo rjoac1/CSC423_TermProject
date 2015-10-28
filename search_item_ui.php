@@ -15,8 +15,12 @@ function ui_show_search_item_form()
 {
     //Create an HTML document using the ECHO statements
     ui_print_header("ADD ITEM TO PROMOTION");
+
+    echo "<div class='center'>";
+    echo "<center>";
     echo "<H3>Search for Item to Add to Promotion</H3>";
     echo "<H4>Enter keywords for item search. Some fields may be left blank.</H4>";
+    echo "</center>";
     echo "<BR/>";
     echo "<FORM action='retrieve_items.php' method='post'>";
     echo "<table>";
@@ -41,10 +45,14 @@ function ui_show_search_item_form()
     echo '<TD><INPUT NAME="departmentName" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
 
-    echo "</table>";
-    echo '<input type="reset" value="Reset" />';
-    echo '<input type="submit" value="Search Items"/>';
+    echo '<tr>';  //
+    echo '<TD align="right"><input type="reset" value="Reset" /></TD>';
+    echo '<TD align="right"><input type="submit" value="Search Items"/></TD>';
+    echo '</tr>';
 
+    echo "</table>";
     echo "</FORM>";
+    echo "</div>";
+
     ui_print_footer_with_main_menu_button();
 }

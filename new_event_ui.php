@@ -12,6 +12,7 @@ function ui_show_new_event_form()
     $script = "<script type='text/javascript' src='ValidateEvent.js'>  </script>";
     ui_print_header_with_head_elements("ADD NEW EVENT", $script);
     
+    echo "<div class='center'>";
     echo "<FORM action='insert_event.php' method='post'>";
     echo "<table>";
 
@@ -46,8 +47,8 @@ function ui_show_new_event_form()
     echo '</tr>';
 
     echo '<tr>';
-    echo '<td><input type="reset" value="Reset" /></td>';
-    echo '<td><input type="submit" onclick="return validateForm();" value="Submit New Event Data" /></td>';
+    echo '<td align="right"><input type="reset" value="Reset" /></td>';
+    echo '<td align="right"><input type="submit" onclick="return validateForm();" value="Submit New Event Data" /></td>';
     echo '</tr>';
 
     echo "</table>";

@@ -16,7 +16,9 @@ function ui_show_search_promotion_form()
 
     //Create an HTML document using the ECHO statements
     ui_print_header("ADD ITEM TO PROMOTION");
-    echo "<H3>SEARCH FOR PROMOTION TO ADD ITEM TO</H3>";
+
+    echo "<div class='center'>";
+    echo "<center><H3>SEARCH FOR PROMOTION TO ADD ITEM TO</H3></center>";
     echo "<BR/>";
     echo "<FORM action='retrieve_promotions.php' method='post'>";
     echo '<input type="hidden" name="itemNumber" value="'.$itemNumberSelected.'" />';
@@ -37,11 +39,14 @@ function ui_show_search_promotion_form()
     echo '<TD><INPUT NAME="description" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
 
+    echo '<tr>';  //
+    echo '<TD align="right"><input type="reset" value="Reset" /></TD>';
+    echo '<TD align="right"><input type="submit" value="Search Promotion" /></TD>';
+    echo '</tr>';
 
     echo "</table>";
-    echo '<input type="reset" value="Reset" />';
-    echo '<input type="submit" value="Search Promotion" />';
-
     echo "</FORM>";
+    echo "</div>";
+
     ui_print_footer_with_main_menu_button();
 }

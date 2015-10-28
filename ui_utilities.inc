@@ -58,10 +58,12 @@ ENDHEAD;
 
 function ui_print_body_header($title){
     echo <<<BODYHEADER
+    <center>
 	<h1>Retail Advertising Data Management System</h1>
     <hr />
     <h2>$title</h2>
     <br />
+    </center>
 BODYHEADER;
 }
 
