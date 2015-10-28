@@ -6,45 +6,38 @@
     <title>Retail Advertising Data Management System: Main Menu</title>
 </head>
 <body>
-<div class="buttonSection">
+    <center>
     <h1>Retail Advertising Data Management System</h1>
     <hr />
     <h2>Main Menu</h2>
-    <br />
-    <div class='center'>
-    <table>
-        <tr>
-            <td>
-                <input type="button" value="Add Item" onclick="window.location='new_item_ui.php'">
-            </td>
-            <td>
-                <input type="button" value="Add Promotion" onclick="window.location='new_promotion_ui.php'">
-            </td>
-            <td>
-                <input type="button" value="Add Event" onclick="window.location='new_event_ui.php'">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="button" value="Update Item">
-            </td>
-            <td>
-                <input type="button" value="Update Promotion">
-            </td>
-            <td>
-                <input type="button" value="Update Event" >
-            </td>
-        </tr>
-        <tr colspan=3>
-            <center>
-                <td></td>
-                <td>
-                    <input type="button" value="Add Item to Promotion" onclick="window.location='search_item_ui.php'">
-                </td>
-                <td></td>
-        </tr>
-    </table>
+    <div class="buttonSection">
+        <h3>ADD NEW</h3>
+        <table class="buttonTable" cellspacing="0" cellpadding="5px">
+            <tr>
+                <td><input type="button" value="Add Item" onclick="window.location='new_item_ui.php'" /></td>
+                <td><input type="button" value="Add Promotion" onclick="window.location='new_promotion_ui.php'" /></td>
+                <td><input type="button" value="Add Event" onclick="window.location='new_event_ui.php'" /></td>
+            </tr>
+        </table>
+        <hr />
+
+        <h3>UPDATE</h3>
+        <table class="buttonTable" cellspacing="0" cellpadding="5px">
+            <tr>
+                <td><input type="button" name="updateItem" value="Update Item" /></td>
+                <td><input type="button" value="Add Item to Promotion" onclick="window.location='search_item_ui.php'"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" name="updatePromotion" value="Update Promotion" /></td>
+                <td><input type="button" name="addPromotionToAdEvent" value="Add Promotion to Ad Event" /></td>
+            </tr>
+            <tr><td colspan="2"><input type="button" name="updateEvent" value="Update Event" /></td></tr>
+        </table>
+        <hr />
+
+        <h3>REPORTS</h3>
+
     </div>
-</div>
+    </center>
 </body>
 </html>
