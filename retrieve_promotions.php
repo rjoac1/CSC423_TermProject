@@ -16,10 +16,10 @@ function get_promotions_matching_search_criteria()
 {
     connect_and_select_db(DB_SERVER, DB_UN, DB_PWD,DB_NAME);
 
-    $itemNumber = $_POST['itemNumber'];
-    $promoCode = $_POST['promoCode'];
-    $name = $_POST['name'];
-    $description = $_POST['description'];
+    $itemNumber = mysql_real_escape_string($_POST['itemNumber']);
+    $promoCode = mysql_real_escape_string($_POST['promoCode']);
+    $name = mysql_real_escape_string($_POST['name']);
+    $description = mysql_real_escape_string($_POST['description']);
 
     $sql = "SELECT *
         FROM   Promotion

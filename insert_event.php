@@ -25,12 +25,12 @@ function insert_event()
     // Get the information entered into the webpage by the user
     // These are available in the super global variable $_POST
     // This is actually an associative array, indexed by a string
-    $eventCode = $_POST['eventCode'];
-    $eventName = $_POST['eventName'];
-    $startDate = $_POST['startDate'];
-    $endDate = $_POST['endDate'];
-    $description = $_POST['description'];
-    $type = $_POST['type'];
+    $eventCode = mysql_real_escape_string($_POST['eventCode']);
+    $eventName = mysql_real_escape_string($_POST['eventName']);
+    $startDate = mysql_real_escape_string($_POST['startDate']);
+    $endDate = mysql_real_escape_string($_POST['endDate']);
+    $description = mysql_real_escape_string($_POST['description']);
+    $type = mysql_real_escape_string($_POST['type']);
 
     // Create a String consisting of the SQL command. Remember that
     // . is the concatenation operator. $varname within double quotes

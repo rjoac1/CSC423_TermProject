@@ -31,12 +31,11 @@ function insert_promotion()
     // Get the information entered into the webpage by the user
     // These are available in the super global variable $_POST
     // This is actually an associative array, indexed by a string
-    $promotionNumber = $_POST['promotionNumber'];
-    $promotionName = $_POST['promotionName'];
-    $promotionDescription = $_POST['promotionDescription'];
-    //$category = $_POST['category'];
-    $promotionValue = $_POST['promotionValue'];
-    $promotionType = $_POST['promotionType'];
+    $promotionNumber = mysql_real_escape_string($_POST['promotionNumber']);
+    $promotionName = mysql_real_escape_string($_POST['promotionName']);
+    $promotionDescription = mysql_real_escape_string($_POST['promotionDescription']);
+    $promotionValue = mysql_real_escape_string($_POST['promotionValue']);
+    $promotionType = mysql_real_escape_string($_POST['promotionType']);
 
     // Create a String consisting of the SQL command. Remember that
     // . is the concatenation operator. $varname within double quotes

@@ -30,12 +30,12 @@ function insert_item()
     // Get the information entered into the webpage by the user
     // These are available in the super global variable $_POST
     // This is actually an associative array, indexed by a string
-    $itemNumber = $_POST['itemNumber'];
-    $itemDescription = $_POST['itemDescription'];
-    $category = $_POST['category'];
-    $departmentName = $_POST['departmentName'];
-    $purchaseCost = $_POST['purchaseCost'];
-    $retailPrice = $_POST['retailPrice'];
+    $itemNumber = mysql_real_escape_string($_POST['itemNumber']);
+    $itemDescription = mysql_real_escape_string($_POST['itemDescription']);
+    $category = mysql_real_escape_string($_POST['category']);
+    $departmentName = mysql_real_escape_string($_POST['departmentName']);
+    $purchaseCost = mysql_real_escape_string($_POST['purchaseCost']);
+    $retailPrice = mysql_real_escape_string($_POST['retailPrice']);
 
     // Create a String consisting of the SQL command. Remember that
     // . is the concatenation operator. $varname within double quotes
@@ -51,12 +51,15 @@ function insert_item()
 
     if (!$result)
     {
-        $message = "Error in inserting Item. <br />Item Description: $itemDescription <br />Category: $category <br />Department
+        $message = "Error in inserting Item. <br />Item Number: $itemNumber<br />Item Description:
+$itemDescription <br />Category:
+$category
+<br />Department
  Name: $departmentName <br />". mysql_error();
     }
     else
     {
-        $message = "Data for Item inserted successfully. <br />Item Description: $itemDescription <br />Category: $category <br />Department Name: $departmentName";
+        $message = "Data for Item inserted successfully. <br />Item Number: $itemNumber<br />Item Description: $itemDescription <br />Category: $category <br />Department Name: $departmentName";
     }
 
     ui_show_item_insert_result($message, $itemNumber, $itemDescription, $category,

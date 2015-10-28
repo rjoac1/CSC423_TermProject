@@ -16,10 +16,10 @@ function get_items_matching_search_criteria()
 {
     connect_and_select_db(DB_SERVER, DB_UN, DB_PWD,DB_NAME);
 
-    $itemNumber = $_POST['itemNumber'];
-    $itemDescription = $_POST['itemDescription'];
-    $category = $_POST['category'];
-    $departmentName = $_POST['departmentName'];
+    $itemNumber = mysql_real_escape_string($_POST['itemNumber']);
+    $itemDescription = mysql_real_escape_string($_POST['itemDescription']);
+    $category = mysql_real_escape_string($_POST['category']);
+    $departmentName = mysql_real_escape_string($_POST['departmentName']);
 
     $sql = "SELECT ItemNumber, ItemDescription, Category, DepartmentName, PurchaseCost, FullRetailPrice
         FROM   Item
