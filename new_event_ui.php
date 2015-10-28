@@ -44,10 +44,16 @@ function ui_show_new_event_form()
     echo '<TD><SPAN ALIGN=RIGHT>Type:</SPAN></TD>';
     echo '<TD><INPUT ID="type" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
+
+    echo '<tr>';
+    echo '<td><input type="reset" value="Reset" /></td>';
+    echo '<td><input type="submit" onclick="return validateForm();" value="Submit New Event Data" /></td>';
+    echo '</tr>';
+
     echo "</table>";
-    echo '<input type="reset" value="Reset" />';
-    echo '<input type="submit" onclick="return validateForm();" value="Submit New Event Data" />';
 
     echo "</FORM>";
+    echo "</div>";
+
     ui_print_footer_with_main_menu_button();
 }
