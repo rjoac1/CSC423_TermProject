@@ -1,15 +1,11 @@
 <?php
-
+require('ui_utilities.inc');
 function ui_show_event_insert_result($eventCode, $eventName, $startDate, $endDate,
                                      $description, $type)
 {
     //----------------------------------------------------------
     // Start the html page
-    echo "<HTML>";
-    echo "<HEAD>";
-    echo "</HEAD>";
-    echo "<BODY>";
-
+    ui_print_header("ADD NEW EVENT");
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname
     if ($message)

@@ -6,6 +6,7 @@
  * Time: 12:02 PM
  */
 //------------------------------------------------------------
+require('ui_utilities.inc');
 // Main Control Logic: It just calls a function
 ui_show_search_item_form();
 
@@ -13,13 +14,9 @@ ui_show_search_item_form();
 function ui_show_search_item_form()
 {
     //Create an HTML document using the ECHO statements
-    echo "<HTML>";
-    echo "<HEAD>";
-
-    echo "</HEAD>";
-    echo "<BODY>";
-    echo "<H1>Search for Item to Add to Promotion</H1>";
-    echo "<H2>Enter keywords for item search. Some fields may be left blank.</H2>";
+    ui_print_header("ADD ITEM TO PROMOTION");
+    echo "<H3>Search for Item to Add to Promotion</H3>";
+    echo "<H4>Enter keywords for item search. Some fields may be left blank.</H4>";
     echo "<BR/>";
     echo "<FORM action='retrieve_items.php' method='post'>";
     echo "<table>";
@@ -49,6 +46,5 @@ function ui_show_search_item_form()
     echo '<input type="submit" value="Search Items"/>';
 
     echo "</FORM>";
-    echo "</BODY>";
-    echo "</HTML>";
+    ui_print_footer_with_main_menu_button();
 }

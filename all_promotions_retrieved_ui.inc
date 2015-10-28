@@ -5,19 +5,16 @@
  * Date: 10/26/2015
  * Time: 11:38 AM
  */
-
+require('ui_utilities.inc');
 function ui_show_promotions_retrieved($message, $promotions_retrieved_result, $item_number)
 {
     //----------------------------------------------------------
     // Start the html page
-    echo "<HTML>";
-    echo "<HEAD>";
-    echo "</HEAD>";
-    echo "<BODY>";
+    ui_print_header("ADD ITEM TO PROMOTION");
 
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname
-
+    echo "<h3>Select Promotion you wish to add Item to.</h3>'";
     if ($message)
     {
         if ($message != "")
@@ -25,7 +22,7 @@ function ui_show_promotions_retrieved($message, $promotions_retrieved_result, $i
             echo '<center><font color="blue">'.$message.'</font></center><br />';
         }
     }
-    echo "<h3>CHOOSE PROMOTION TO ADD ITEM TO</h3>'";
+
     echo <<<END
     <form action="add_item_to_promotion.php" method="post">
     <input type="hidden" name="itemNumber" value="$item_number" />

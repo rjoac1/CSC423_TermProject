@@ -1,5 +1,5 @@
 <?php
-
+require('ui_utilities.inc');
 //------------------------------------------------------------
 // Main Control Logic: It just calls a function
 ui_show_new_event_form();
@@ -8,12 +8,10 @@ ui_show_new_event_form();
 function ui_show_new_event_form()
 {
     //Create an HTML document using the ECHO statements
-    echo "<HTML>";
-    echo "<HEAD>";
-    echo "<script type='text/javascript' src='ValidateEvent.js'>  </script>";
-    echo "</HEAD>";
-    echo "<BODY>";
-    echo "<BR/>";
+
+    $script = "<script type='text/javascript' src='ValidateEvent.js'>  </script>";
+    ui_print_header_with_head_elements("ADD NEW EVENT", $script);
+    
     echo "<FORM action='insert_event.php' method='post'>";
     echo "<table>";
 
@@ -51,6 +49,5 @@ function ui_show_new_event_form()
     echo '<input type="submit" onclick="return validateForm();" value="Submit New Event Data" />';
 
     echo "</FORM>";
-    echo "</BODY>";
-    echo "</HTML>";
+    ui_print_footer_with_main_menu_button();
 }

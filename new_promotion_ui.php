@@ -5,6 +5,7 @@
  * Date: 10/21/2015
  * Time: 3:02 PM
  */
+require('ui_utilities.inc');
 //------------------------------------------------------------
 // Main Control Logic: It just calls a function
 ui_show_new_promotion_form();
@@ -12,12 +13,10 @@ ui_show_new_promotion_form();
 function ui_show_new_promotion_form()
 {
     //Create an HTML document using the ECHO statements
-    echo "<HTML>";
-    echo "<HEAD>";
-    echo "<script type='text/javascript' src='NewPromotionValidation.js'>  </script>";
-    echo "</HEAD>";
-    echo "<BODY>";
-    echo "<BR/>";
+
+    $script = "<script type='text/javascript' src='NewPromotionValidation.js'>  </script>";
+    ui_print_header_with_head_elements("ADD NEW PROMOTION", $script);
+
     echo "<FORM action='insert_promotion.php' method='post'>";
     echo "<table>";
 
@@ -50,6 +49,5 @@ function ui_show_new_promotion_form()
     echo '<input type="submit" value="Submit New Promotion Data" onclick="return validate()" />';
 
     echo "</FORM>";
-    echo "</BODY>";
-    echo "</HTML>";
+    ui_print_footer_with_main_menu_button();
 }

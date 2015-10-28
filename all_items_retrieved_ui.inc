@@ -5,16 +5,14 @@
  * Date: 10/26/2015
  * Time: 11:38 AM
  */
+require('ui_utilities.inc');
 
 function ui_show_items_retrieved($message, $items_retrieved_result)
 {
     //----------------------------------------------------------
     // Start the html page
-    echo "<HTML>";
-    echo "<HEAD>";
-    echo "</HEAD>";
-    echo "<BODY>";
-
+    ui_print_header("ADD ITEM TO PROMOTION");
+    echo "<h3>Select the Item you wish to add to a Promotion</h3>";
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname
 
@@ -25,7 +23,7 @@ function ui_show_items_retrieved($message, $items_retrieved_result)
             echo '<center><font color="blue">'.$message.'</font></center><br />';
         }
     }
-    echo "<h3>CHOOSE ITEM TO ADD TO PROMOTION</h3>'";
+
     echo <<<END
     <form action="search_promotions_ui.php" method="post">
     <table border="1" cellspacing="0" cellpadding="5px">
@@ -62,12 +60,6 @@ END;
     echo "</table>";
     echo "</form>";
 
-    echo <<<END
-    <br />
-    <input type="button" value="Return to Main Menu" onClick="window.location='index.html'"/>
-    </body>
-    </html>
-END;
-
+    ui_print_footer_with_main_menu_button();
 }
 ?>

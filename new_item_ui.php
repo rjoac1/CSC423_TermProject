@@ -13,7 +13,7 @@ ui_show_new_item_form();
 function ui_show_new_item_form()
 {
     $script = "<script type='text/javascript' src='NewItemValidation.js'> </script>";
-    ui_print_header_with_head_elements("Add New Item", $script);
+    ui_print_header_with_head_elements("ADD NEW ITEM", $script);
 
 
     echo "<FORM action='insert_item.php' method='post'>";
@@ -53,6 +53,5 @@ function ui_show_new_item_form()
     echo '<input type="submit" value="Submit New Item Data" onclick="return validateItemData()" />';
 
     echo "</FORM>";
-    echo "</BODY>";
-    echo "</HTML>";
+    ui_print_footer_with_main_menu_button();
 }

@@ -5,6 +5,7 @@
  * Date: 10/26/2015
  * Time: 1:05 PM
  */
+require('ui_utilities.inc');
 // Main Control Logic: It just calls a function
 ui_show_search_promotion_form();
 
@@ -14,12 +15,8 @@ function ui_show_search_promotion_form()
     $itemNumberSelected = $_REQUEST['itemNumber'];
 
     //Create an HTML document using the ECHO statements
-    echo "<HTML>";
-    echo "<HEAD>";
-
-    echo "</HEAD>";
-    echo "<BODY>";
-    echo "<H1>SEARCH FOR PROMOTION TO ADD ITEM TO</H1>";
+    ui_print_header("ADD ITEM TO PROMOTION");
+    echo "<H3>SEARCH FOR PROMOTION TO ADD ITEM TO</H3>";
     echo "<BR/>";
     echo "<FORM action='retrieve_promotions.php' method='post'>";
     echo '<input type="hidden" name="itemNumber" value="'.$itemNumberSelected.'" />';
@@ -46,6 +43,5 @@ function ui_show_search_promotion_form()
     echo '<input type="submit" value="Search Promotion" />';
 
     echo "</FORM>";
-    echo "</BODY>";
-    echo "</HTML>";
+    ui_print_footer_with_main_menu_button();
 }

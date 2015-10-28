@@ -5,13 +5,11 @@
  * Date: 10/26/2015
  * Time: 3:43 PM
  */
+require('ui_utilities.inc');
 function ui_show_promotion_item_insert_result($message){
     //----------------------------------------------------------
     // Start the html page
-    echo "<HTML>";
-    echo "<HEAD>";
-    echo "</HEAD>";
-    echo "<BODY>";
+    ui_print_header("ADD ITEM TO PROMOTION");
 
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname
@@ -24,15 +22,6 @@ function ui_show_promotion_item_insert_result($message){
     }
 
 //finish up the html code, and put the return button to go back to main menu
-    echo <<<UPTOEND
-  <BR/><BR/>
-  <center>
-  <input type="button" value="Return to Main Menu"
-	onClick="window.location='index.html'"/>
-  </center>
-UPTOEND;
-
-    echo "</BODY>";
-    echo "</HTML>";
+   ui_print_footer_with_main_menu_button();
 }
 ?>

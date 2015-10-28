@@ -51,7 +51,8 @@ function insert_item()
 
     if (!$result)
     {
-        $message = "Error in inserting Item. <br />Item Description: $itemDescription <br />Category: $category <br />Department Name: $departmentName ". mysql_error();
+        $message = "Error in inserting Item. <br />Item Description: $itemDescription <br />Category: $category <br />Department
+ Name: $departmentName <br />". mysql_error();
     }
     else
     {
