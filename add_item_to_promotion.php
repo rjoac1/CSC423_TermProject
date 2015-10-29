@@ -17,33 +17,45 @@ function add_item_to_promotion()
 {
     connect_and_select_db(DB_SERVER, DB_UN, DB_PWD,DB_NAME);
 
-    $itemNumber = $_POST['itemNumber'];
+    $itemNumbers = $_POST['itemNumbers'];
     $promoCode = $_REQUEST['promoCode'];
     //echo "Item number = $itemNumber \nPromoCode = $promoCode";
     //Calculate sale price
-    $item_retail_price = getItemRetailPrice($itemNumber);
     $promoType = getPromoType($promoCode);
     $amountOff = getAmountOff($promoCode);
-
-    //echo "retail price : $item_retail_price \n promotype: $promoType \n amount off: $amountOff";
-
-    $salePrice = getSalePrice($item_retail_price, $promoType, $amountOff);
-
-    $insertStmt = "INSERT INTO PromotionItem (PromoCode, ItemNumber, SalePrice) values ( '$promoCode','$itemNumber', '$salePrice')";
-
-    $result = mysql_query($insertStmt);
-
     $message = "";
 
-    if (!$result)
+    if(empty($itemNumbers))
     {
-        $message = "Error adding Item to Promotion. <br />Promo Code: $promoCode<br />Item Number:
-        $itemNumber<br />Sale Price: $salePrice<br />". mysql_error();
+        $message .= "Error: No Items Selected.";
     }
-    else
-    {
-        $message = "Item added to Promotion successfully.<br />Promo Code: $promoCode<br />Item Number:
-        $itemNumber<br />Sale Price: $salePrice";
+    else{
+        $count = count($itemNumbers);
+        $message .= "$count Items selected.<br />";
+
+        foreach($itemNumbers as $itemNumber) {
+
+            if (!itemExistsAlreadyInPromotion($itemNumber, $promoCode)) {
+
+                $item_retail_price = getItemRetailPrice($itemNumber);
+                //echo "retail price : $item_retail_price \n promotype: $promoType \n amount off: $amountOff";
+                $salePrice = getSalePrice($item_retail_price, $promoType, $amountOff);
+                $insertStmt = "INSERT INTO PromotionItem (PromoCode, ItemNumber, SalePrice) values ( '$promoCode','$itemNumber', '$salePrice')";
+
+                $result = mysql_query($insertStmt);
+
+
+                if (!$result) {
+                    $message .= "Error adding Item to Promotion. <br />Promo Code: $promoCode<br />Item Number:
+                $itemNumber<br />Sale Price: $salePrice<br /><br />" . mysql_error() . "<br />";
+                } else {
+                    $message .= "Item added to Promotion successfully.<br />Promo Code: $promoCode<br />Item Number:
+                $itemNumber<br />Sale Price: $salePrice<br /><br />";
+                }
+            } else {
+                $message .= "Item (Item Number: $itemNumber) already exists in Promotion (Promo Code: $promoCode).<br /><br />";
+            }
+        }
     }
 
     ui_show_promotion_item_insert_result($message);
@@ -87,4 +99,14 @@ function getAmountOff($pCode)
     $result = get_unique_row($select_stmt, $not_found_message, $not_found_message);
 
     return $result['AmountOff'];
+}
+function itemExistsAlreadyInPromotion($itemNo, $promoCo)
+{
+    $selectStmt = "SELECT * FROM PromotionItem WHERE ItemNumber = '$itemNo' AND PromoCode = '$promoCo'";
+    $result = execute_SQL_query_with_no_error_report($selectStmt);
+    $numRows = count_rows_in_result_set($result);
+    if($numRows == 0)
+        return false;
+    else
+        return true;
 }

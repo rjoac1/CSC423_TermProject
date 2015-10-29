@@ -11,8 +11,8 @@ function ui_show_items_retrieved($message, $items_retrieved_result)
 {
     //----------------------------------------------------------
     // Start the html page
-    ui_print_header("ADD ITEM TO PROMOTION");
-    echo "<center><h3>Select the Item you wish to add to a Promotion</h3></center>";
+    ui_print_header("ADD ITEMS TO PROMOTION");
+    echo "<center><h3>Select the Items you wish to add to a Promotion and press the Submit button.</h3></center>";
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname
 
@@ -26,8 +26,10 @@ function ui_show_items_retrieved($message, $items_retrieved_result)
 
     echo <<<END
     <form action="search_promotions_ui.php" method="post">
+    <center><input type="submit" value="Submit"/></center>
     <table border="1" cellspacing="0" cellpadding="5px">
     <tr>
+    <th></th>
     <th>Item Number</th>
     <th>Item Description</th>
     <th>Category</th>
@@ -47,7 +49,8 @@ END;
 
         echo "<tr>";
 
-        echo "<td><center><INPUT TYPE='submit' NAME='itemNumber' VALUE='$itemNumber' /></center></td>";
+        echo "<td><center><INPUT TYPE='checkbox' NAME='itemNumbers[]' VALUE='$itemNumber' /></center></td>";
+        echo "<td>$itemNumber</td>";
         echo "<td>$itemDescription</td>";
         echo "<td>$category</td>";
         echo "<td>$deptartmentName</td>";
@@ -58,6 +61,7 @@ END;
     }
 
     echo "</table>";
+    echo "<center><input type='submit' value='Submit'/></center>";
     echo "</form>";
 
     ui_print_footer_with_main_menu_button();

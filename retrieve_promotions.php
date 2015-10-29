@@ -16,7 +16,7 @@ function get_promotions_matching_search_criteria()
 {
     connect_and_select_db(DB_SERVER, DB_UN, DB_PWD,DB_NAME);
 
-    $itemNumber = mysql_real_escape_string($_POST['itemNumber']);
+    $itemNumbers = $_POST['itemNumbers'];
     $promoCode = mysql_real_escape_string($_POST['promoCode']);
     $name = mysql_real_escape_string($_POST['name']);
     $description = mysql_real_escape_string($_POST['description']);
@@ -39,5 +39,5 @@ function get_promotions_matching_search_criteria()
     if ($numrows == 0)
         $message = "No promotions found in database";
 
-    ui_show_promotions_retrieved($message, $search_promotions_result, $itemNumber);
+    ui_show_promotions_retrieved($message, $search_promotions_result, $itemNumbers);
 }

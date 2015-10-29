@@ -14,11 +14,11 @@ ui_show_search_item_form();
 function ui_show_search_item_form()
 {
     //Create an HTML document using the ECHO statements
-    ui_print_header("ADD ITEM TO PROMOTION");
+    ui_print_header("ADD ITEMS TO PROMOTION");
 
     echo "<div class='center'>";
     echo "<center>";
-    echo "<H3>Search for Item to Add to Promotion</H3>";
+    echo "<H3>Search for Items to Add to Promotion</H3>";
     echo "<H4>Enter keywords for item search. Some fields may be left blank.</H4>";
     echo "</center>";
     echo "<BR/>";

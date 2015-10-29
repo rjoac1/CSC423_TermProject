@@ -12,18 +12,20 @@ ui_show_search_promotion_form();
 //------------------------------------------------------------
 function ui_show_search_promotion_form()
 {
-    $itemNumberSelected = $_REQUEST['itemNumber'];
+    $itemNumbersSelected = $_POST['itemNumbers'];
 
     //Create an HTML document using the ECHO statements
-    ui_print_header("ADD ITEM TO PROMOTION");
+    ui_print_header("ADD ITEMS TO PROMOTION");
 
     echo "<div class='center'>";
-    echo "<center><H3>SEARCH FOR PROMOTION TO ADD ITEM TO</H3></center>";
+    echo "<center><H3>SEARCH FOR PROMOTION TO ADD ITEMS TO</H3></center>";
     echo "<BR/>";
     echo "<FORM action='retrieve_promotions.php' method='post'>";
-    echo '<input type="hidden" name="itemNumber" value="'.$itemNumberSelected.'" />';
+    foreach($itemNumbersSelected as $itemNo)
+    {
+        echo '<input type="hidden" name="itemNumbers[]" value="'.$itemNo.'" />';
+    }
     echo "<table>";
-
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Promotion Code:</SPAN></TD>';
     echo '<TD><INPUT NAME="promoCode" TYPE="text" SIZE=50/></TD>';

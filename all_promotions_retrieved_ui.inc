@@ -6,15 +6,15 @@
  * Time: 11:38 AM
  */
 require('ui_utilities.inc');
-function ui_show_promotions_retrieved($message, $promotions_retrieved_result, $item_number)
+function ui_show_promotions_retrieved($message, $promotions_retrieved_result, $item_numbers)
 {
     //----------------------------------------------------------
     // Start the html page
-    ui_print_header("ADD ITEM TO PROMOTION");
+    ui_print_header("ADD ITEMS TO PROMOTION");
 
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname
-    echo "<center><h3>Select Promotion you wish to add Item to.</h3></center>";
+    echo "<center><h3>Select Promotion you wish to add Items to.</h3></center>";
     if ($message)
     {
         if ($message != "")
@@ -23,10 +23,15 @@ function ui_show_promotions_retrieved($message, $promotions_retrieved_result, $i
         }
     }
 
-    echo <<<END
+    echo <<<END1
     <div class="center">
     <form action="add_item_to_promotion.php" method="post">
-    <input type="hidden" name="itemNumber" value="$item_number" />
+END1;
+    foreach($item_numbers as $itemNo)
+    {
+        echo "<input type='hidden' name='itemNumbers[]' value='$itemNo' />";
+    }
+    echo <<<END2
     <table border="1" cellspacing="0" cellpadding="5px">
     <tr>
     <th>Promo Code</th>
@@ -35,7 +40,9 @@ function ui_show_promotions_retrieved($message, $promotions_retrieved_result, $i
     <th>Amount Off</th>
     <th>Promo Type</th>
     </tr>
-END;
+END2;
+
+
     while($row = mysql_fetch_assoc($promotions_retrieved_result))
     {
         $promoCode = $row['PromoCode'];
