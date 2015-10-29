@@ -15,8 +15,8 @@ function checkName(){
     var name = document.getElementById("promotionName").value;
     //alert("Name: " + name);
 
-    if(name.length == 0 || name == ""){
-        alert("Please enter in Promotion Name");
+    if(name.length == 0 || name == "" || name.length > 50){
+        alert("Please enter in Promotion Name. Name must be less than 50 characters in length.");
         return false;
     }
     return true;
@@ -36,8 +36,8 @@ function checkDescription() {
     var description = document.getElementById("promotionDescription").value;
     //alert("Description: " + description);
 
-    if (description.length == 0 || description == "") {
-        alert("Please enter in the Promotion Description.");
+    if (description.length == 0 || description == "" || description.length > 50) {
+        alert("Please enter in the Promotion Description. Description must be less than 50 characters in length.");
         return false
     }
     return true;
@@ -66,7 +66,7 @@ function checkAmountOff(){
     //The Project description stated otherwise but the database had values in the 0.00 form.
     //Asked mitra about this and he said it was our choice. Since we need a common form for the calculations later on, Van and I decided to go with this form. ~RJ and VL
     else if(amountOff.match(/^[\d]+\.[\d]{2}$/) == null) {
-        alert("Amount off for promotion must be a number rounded to two decimal places. (i.e. 0.00)");
+        alert("Amount off for promotion must be a numberical value rounded to two decimal places. (i.e. 0.00)");
         return false;
     }
     return true;

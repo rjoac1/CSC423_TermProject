@@ -22,7 +22,7 @@ function checkItemNumber()
         var itemNo = document.getElementById("itemNumber");
         var enteredItemNumber = itemNo.value;
         //alert(enteredItemNumber);
-        if(enteredItemNumber.length == 0 || enteredItemNumber == "")
+        if(enteredItemNumber.length == 0 || enteredItemNumber == "" || enteredItemNumber.length > 7)
         {
                 alert("Please enter an Item Number up to 7 digits.");
                 return false;
