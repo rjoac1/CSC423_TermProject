@@ -28,6 +28,6 @@ div.buttonSection{
     padding: 10px;
     text-align: center;
 }
-INPUT[type="button"]{
+.buttonSection INPUT[type="button"]{
     width:100%;
 }
