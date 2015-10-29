@@ -26,7 +26,7 @@ function ui_show_items_retrieved($message, $items_retrieved_result)
 
     echo <<<END
     <form action="search_promotions_ui.php" method="post">
-    <center><input type="submit" value="Submit"/></center>
+    <center><input type="submit" value="Submit"/></center><br />
     <table border="1" cellspacing="0" cellpadding="5px">
     <tr>
     <th></th>
@@ -61,6 +61,7 @@ END;
     }
 
     echo "</table>";
+    echo"<br />";
     echo "<center><input type='submit' value='Submit'/></center>";
     echo "</form>";
 
