@@ -18,32 +18,32 @@ function ui_show_new_event_form()
 
     echo '<tr>';  // Event Code
     echo '<TD><SPAN ALIGN=RIGHT>Event Code:</SPAN></TD>';
-    echo '<TD><INPUT ID="eventCode" TYPE="text" SIZE=50/></TD>';
+    echo '<TD><INPUT NAME="eventCode" ID="eventCode" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
 
     echo '<tr>';  // Event Name
     echo '<TD><SPAN ALIGN=RIGHT>Event Name:</SPAN></TD>';
-    echo '<TD><INPUT ID="eventName" TYPE="text" SIZE=50/></TD>';
+    echo '<TD><INPUT NAME="eventName" ID="eventName" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
 
     echo '<tr>';  // Start Date
     echo '<TD><SPAN ALIGN=RIGHT>Start Date:</SPAN></TD>';
-    echo '<TD><INPUT ID="startDate" TYPE="text" SIZE=50/></TD>';
+    echo '<TD><INPUT NAME="startDate"ID="startDate" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
 
     echo '<tr>';  // End Date
     echo '<TD><SPAN ALIGN=RIGHT>End Date:</SPAN></TD>';
-    echo '<TD><INPUT ID="endDate" TYPE="text" SIZE=50/></TD>';
+    echo '<TD><INPUT NAME="endDate" ID="endDate" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
 
     echo '<tr>';  // Description
     echo '<TD><SPAN ALIGN=RIGHT>Description:</SPAN></TD>';
-    echo '<TD><INPUT ID="description" TYPE="text" SIZE=50/></TD>';
+    echo '<TD><INPUT NAME="description" ID="description" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
 
     echo '<tr>';  // Type
     echo '<TD><SPAN ALIGN=RIGHT>Type:</SPAN></TD>';
-    echo '<TD><INPUT ID="type" TYPE="text" SIZE=50/></TD>';
+    echo '<TD><INPUT NAME="type" ID="type" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
 
     echo '<tr>';
