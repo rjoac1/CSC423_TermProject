@@ -12,11 +12,14 @@ body{
     padding: 10px;
 }
 
-.buttonSection{
+div.buttonSection{
     display:inline-block;
     width: 60%;
     padding: 10px;
     text-align: center;
+}
+.buttonSection h3{
+    text-decoration: underline;
 }
 .buttonTable{
     display:inline-block;
@@ -24,4 +27,7 @@ body{
     width: auto;
     padding: 10px;
     text-align: center;
+}
+INPUT[type="button"]{
+    width:100%;
 }
