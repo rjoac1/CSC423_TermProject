@@ -72,7 +72,7 @@ function getSalePrice($item_retail_price, $promoType, $amountOff)
         $result = ($item_retail_price - $amountOff);
         //echo "Dollar result: $result";
     }
-    //$result = round($result, 2);
+    $result = round($result, 2);
     return $result;
 }
 function getItemRetailPrice($itemNum)
