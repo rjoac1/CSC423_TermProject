@@ -6,6 +6,7 @@
  * Time: 2:33 PM
  */
 require('ui_utilities.inc');
+require('retrieve_dropdown_values_utility.inc');
 //------------------------------------------------------------
 // Main Control Logic: It just calls a function
 //------------------------------------------------------------
@@ -30,12 +31,30 @@ function ui_show_update_item_form($itemNumber, $itemDescription,
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Category:</SPAN></TD>';
-    echo '<TD><INPUT NAME="category"  ID="category" TYPE="text" SIZE=50 VALUE='.$category.' /></TD>';
+    echo '<TD><select ID="category" NAME="category">';
+    $dropDownValues = get_item_category_dropdown_values();
+    while($dropDownValue = mysql_fetch_array($dropDownValues)){
+        if (strcmp($category,$dropDownValue[0]) == 0) {
+            echo "<option value='$dropDownValue[0]' selected='selected'>$dropDownValue[0]</option>";
+        } else {
+            echo "<option value='$dropDownValue[0]'>$dropDownValue[0]</option>";
+        }
+    }
+    echo '</select></TD>';
     echo '</tr>';
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Department Name:</SPAN></TD>';
-    echo '<TD><INPUT NAME="departmentName" ID="departmentName" TYPE="text" SIZE=50 VALUE='.$deptName.' /></TD>';
+    echo '<TD><select ID="departmentName" NAME="departmentName">';
+    $dropDownValues = get_item_department_name_dropdown_values();
+    while($dropDownValue = mysql_fetch_array($dropDownValues)){
+        if (strcmp($deptName,$dropDownValue[0]) == 0) {
+            echo "<option value='$dropDownValue[0]' selected='selected'>$dropDownValue[0]</option>";
+        } else {
+            echo "<option value='$dropDownValue[0]'>$dropDownValue[0]</option>";
+        }
+    }
+    echo '</select></TD>';
     echo '</tr>';
 
     echo '<tr>';  //

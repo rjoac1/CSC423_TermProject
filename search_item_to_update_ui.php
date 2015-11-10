@@ -18,7 +18,7 @@ function ui_show_search_item_form()
 
     echo "<div class='center'>";
     echo "<center>";
-    echo "<H3>Search for Items to update</H3>";
+    echo "<H3>Search for Item to update</H3>";
     echo "<H4>Enter keywords for item search. Some fields may be left blank.</H4>";
     echo "</center>";
     echo "<BR/>";
