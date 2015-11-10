@@ -2,8 +2,6 @@
 /**
  * Created by PhpStorm.
  * User: douglasschultz1
- * Date: 11/10/15
- * Time: 5:42 PM
  */
 
 require('db_cn.inc');
