@@ -72,7 +72,7 @@ END;
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Item Description:</SPAN></TD>';
-    echo '<TD><INPUT NAME="itemDescription" ID="itemDescription" TYPE="text" SIZE=50 VALUE='.$itemDescription.' /></TD>';
+    echo "<TD><INPUT NAME='itemDescription' ID='itemDescription' TYPE='text' SIZE=50 VALUE='$itemDescription' /></TD>";
     echo '</tr>';
 
     echo '<input type="hidden" id="category" name="category" />';
