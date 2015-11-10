@@ -23,7 +23,7 @@ function ui_show_new_item_form()
             var oTextBox = oDDL.form.elements["other_category"];
             if(oTextBox){
                     oTextBox.style.display = (oDDL.value == "") ? "" : "none";
-                    if(oDDL.value == "other")
+                    if(oDDL.value == "")
                     {
                             oTextBox.focus();
                     }
@@ -34,7 +34,7 @@ function ui_show_new_item_form()
             var oTextBox = oDDL.form.elements["other_department"];
             if(oTextBox){
                     oTextBox.style.display = (oDDL.value == "") ? "" : "none";
-                    if(oDDL.value == "other")
+                    if(oDDL.value == "")
                     {
                             oTextBox.focus();
                     }
@@ -42,7 +42,6 @@ function ui_show_new_item_form()
     }
     function setHiddenValues(oButton)
     {
-            alert();
             var oCategoryHidden = oButton.form.elements["category"];
             var oCategoryDDL = oButton.form.elements["category_ddl"];
             var oCategoryTextBox = oButton.form.elements["other_category"];
