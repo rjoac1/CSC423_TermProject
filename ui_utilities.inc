@@ -43,7 +43,9 @@ function ui_print_link_references($args){
     //Put in the page specific lines of code that need to go into the head.
     //(i.e. scripts, links to stylesheets etc.)
     foreach($args as $arg){
-        echo "$arg";
+        echo "
+        $arg
+        ";
     }
 }
 

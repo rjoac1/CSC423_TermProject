@@ -1,6 +1,14 @@
 /**
  * Created by Maximus on 10/25/2015.
  */
+$(document).ready(function() {
+// Datepicker Popups calender to Choose date.
+    $(function() {
+        $("#startDate, #endDate").datepicker({
+            dateFormat: "yy-mm-dd"
+        });
+    });
+});
 function validateForm(){
     //alert("works");
     return validateEventCode() && validateName() && validateBothDates();
@@ -114,6 +122,8 @@ function validateStartDateBeforeEndDate() {
 
 
 }
+
+
 
 
 /**/
