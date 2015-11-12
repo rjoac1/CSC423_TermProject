@@ -18,7 +18,7 @@ function ui_show_search_promotion_form()
     echo "<div class='center'>";
     echo "<center>";
     echo "<H3>Search for Promotion to update</H3>";
-    echo "<H4>Enter keywords for item search. Some fields may be left blank.</H4>";
+    echo "<H4>Enter keywords for Promotion search. Some fields may be left blank.</H4>";
     echo "</center>";
     echo "<BR/>";
     echo "<FORM action='retrieve_promotion_to_update.php' method='post'>";

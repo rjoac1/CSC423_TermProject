@@ -67,7 +67,7 @@ END;
     echo "<table>";
 
     echo '<tr>';  //
-    echo '<TD><INPUT NAME="itemNumber" ID="itemNumber" TYPE="hidden" SIZE=50 VALUE='.$itemNumber.' /></TD>';
+    echo "<TD><INPUT NAME=\"itemNumber\" ID=\"itemNumber\" TYPE=\"hidden\" SIZE=50 VALUE='$itemNumber' /></TD>";
     echo '</tr>';
 
     echo '<tr>';  //
@@ -111,12 +111,12 @@ END;
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Purchase Cost:</SPAN></TD>';
-    echo '<TD><INPUT NAME="purchaseCost" ID="purchaseCost" TYPE="text" SIZE=50 VALUE='.$purchCost.' /></TD>';
+    echo "<TD><INPUT NAME=\"purchaseCost\" ID=\"purchaseCost\" TYPE=\"text\" SIZE=50 VALUE='$purchCost' /></TD>";
     echo '</tr>';
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Full Retail Price:</SPAN></TD>';
-    echo '<TD><INPUT NAME="retailPrice" ID="retailPrice" TYPE="text" SIZE=50 VALUE='.$retail.' /></TD>';
+    echo "<TD><INPUT NAME=\"retailPrice\" ID=\"retailPrice\" TYPE=\"text\" SIZE=50 VALUE='$retail' /></TD>";
     echo '</tr>';
 
     echo '<tr>';  //

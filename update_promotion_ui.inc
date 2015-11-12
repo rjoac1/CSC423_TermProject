@@ -21,22 +21,22 @@ function ui_show_update_promotion_form($promoCode, $name,
     echo "<table>";
 
     echo '<tr>';  //
-    echo '<TD><INPUT NAME="promoCode" ID="promoCode" TYPE="hidden" SIZE=50 VALUE='.$promoCode.' /></TD>';
+    echo "<TD><INPUT NAME=\"promoCode\" ID=\"promoCode\" TYPE=\"hidden\" SIZE=50 VALUE='$promoCode' /></TD>";
     echo '</tr>';
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Promotion Name:</SPAN></TD>';
-    echo '<TD><INPUT ID="promotionName" NAME="promotionName" TYPE="text" SIZE=50 VALUE='.$name.' /></TD>';
+    echo "<TD><INPUT ID=\"promotionName\" NAME=\"promotionName\" TYPE=\"text\" SIZE=50 VALUE='$name' /></TD>";
     echo '</tr>';
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Promotion Description:</SPAN></TD>';
-    echo '<TD><INPUT ID="promotionDescription" NAME="promotionDescription" TYPE="text" SIZE=50 VALUE='.$description.' /></TD>';
+    echo "<TD><INPUT ID=\"promotionDescription\" NAME=\"promotionDescription\" TYPE=\"text\" SIZE=50 VALUE='$description' /></TD>";
     echo '</tr>';
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Amount Off:</SPAN></TD>';
-    echo '<TD><INPUT ID="amountOff" NAME="amountOff" TYPE="text" SIZE=50 VALUE='.$amountOff.' /></TD>';
+    echo "<TD><INPUT ID=\"amountOff\" NAME=\"amountOff\" TYPE=\"text\" SIZE=50 VALUE='$amountOff' /></TD>";
     echo '</tr>';
 
     echo '<tr>';  //
