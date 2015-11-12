@@ -1,6 +1,17 @@
 /**
  * Created by Maximus on 10/25/2015.
  */
+$(document).ready(function() {
+// Datepicker Popups calender to Choose date.
+    $(function() {
+        $("#startDate, #endDate").datepicker({
+            dateFormat: "yy-mm-dd"
+        });
+        $("#startDate, #endDate").keypress(function(event) {event.preventDefault();});
+    });
+});
+
+
 function validateForm(){
     //alert("works");
     return validateEventCode() && validateName() && validateBothDates();
@@ -151,5 +162,7 @@ function memberOfArray(arr, obj) {
     //alert("index at " + arr.indexOf(obj));
     return (arr.indexOf(obj) != -1);
 }
+
+
 
 /**/
