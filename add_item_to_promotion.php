@@ -31,7 +31,7 @@ function add_item_to_promotion()
     }
     else{
         $count = count($itemNumbers);
-        $message .= "$count Items selected.<br />";
+        $message .= "$count Items selected to be added to Promotion.<br />";
 
         foreach($itemNumbers as $itemNumber) {
 
