@@ -2,7 +2,8 @@
 //alert();
 function validateItemData()
 {
-        setHiddenValues();
+        //setHiddenValues();
+        //alert();
         return checkItemNumber() && checkItemDescription() && checkCategory() && checkDepartmentName() && checkPurchaseCost() && checkRetailPrice();
 //        checkItemNumber();
 
@@ -16,6 +17,50 @@ function validateItemData()
 
 //        checkRetailPrice();
 
+}
+
+function CategoryDropdownChanged()
+{
+        var categoryDDL = document.getElementById("category_ddl");
+        var oTextBox = document.getElementById("other_category");
+        if(oTextBox){
+                oTextBox.style.display = (categoryDDL.value == "") ? "" : "none";
+                if(categoryDDL.value == "")
+                {
+                        oTextBox.focus();
+                }
+        }
+}
+function DepartmentDropdownChanged()
+{
+        var oDDL = document.getElementById("departmentName_ddl")
+        var oTextBox = document.getElementById("other_department");
+        if(oTextBox){
+                oTextBox.style.display = (oDDL.value == "") ? "" : "none";
+                if(oDDL.value == "")
+                {
+                        oTextBox.focus();
+                }
+        }
+}
+function setHiddenValues()
+{
+        var oCategoryHidden = document.getElementById("category");
+        var oCategoryDDL = document.getElementById("category_ddl");
+        var oCategoryTextBox = document.getElementById("other_category");
+        if(oCategoryHidden && oCategoryDDL && oCategoryTextBox)
+        {
+                oCategoryHidden.value = (oCategoryDDL.value == '') ? oCategoryTextBox.value : oCategoryDDL.value;
+        }
+
+        var oDepartmentHidden = document.getElementById("departmentName");
+        var oDepartmentDDL = document.getElementById("departmentName_ddl");
+        var oDepartmentTextBox = document.getElementById("other_department");
+        if(oDepartmentHidden && oDepartmentDDL && oDepartmentTextBox)
+        {
+                oDepartmentHidden.value = (oDepartmentDDL.value == '') ? oDepartmentTextBox.value : oDepartmentDDL.value;
+        }
+        return validateItemData();
 }
 
 function checkItemNumber()
