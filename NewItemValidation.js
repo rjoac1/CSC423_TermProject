@@ -3,7 +3,7 @@
 function validateItemData()
 {
         //setHiddenValues();
-        alert();
+        //alert();
         return checkItemNumber() && checkItemDescription() && checkCategory() && checkDepartmentName() && checkPurchaseCost() && checkRetailPrice();
 //        checkItemNumber();
 
