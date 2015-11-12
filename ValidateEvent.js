@@ -7,8 +7,11 @@ $(document).ready(function() {
         $("#startDate, #endDate").datepicker({
             dateFormat: "yy-mm-dd"
         });
+        $("#startDate, #endDate").keypress(function(event) {event.preventDefault();});
     });
 });
+
+
 function validateForm(){
     //alert("works");
     return validateEventCode() && validateName() && validateBothDates();
