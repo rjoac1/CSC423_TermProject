@@ -23,7 +23,6 @@ function ui_show_events_retrieved($message, $events_retrieved_result)
     }
 
     echo <<<END
-    <form action="search_promotions_ui.php" method="post">
     <center><input type="submit" value="Submit"/></center><br />
     <table border="1" cellspacing="0" cellpadding="5px">
     <tr>
@@ -55,13 +54,15 @@ END;
         echo "<td>$type</td>";
 
         echo '</tr>';
+
+
     }
 
     echo "</table>";
     echo"<br />";
-    echo "<center><input type='submit' value='Submit'/></center>";
-    echo "</form>";
 
     ui_print_footer_with_main_menu_button();
 }
+function ui_show_eventpromo_retrieved($message, $events_retrieved_result)
+
 ?>

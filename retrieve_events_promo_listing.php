@@ -5,7 +5,7 @@
  */
 
 require('db_cn.inc');
-require('all_events_retrieved_ui.inc');
+require('all_events_promo_listing_retrieved_ui.inc');
 require('db_access.inc');
 //Main control logic
 get_items_matching_search_criteria();

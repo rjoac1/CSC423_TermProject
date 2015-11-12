@@ -52,7 +52,7 @@ function validateBothDates(){
 function validateStartDate(){
     //Need to know form ID --MW
     var startDate = document.getElementById("startDate").value;
-    if(dataEnteredIntoField(startDate) && validateDateFormat(startDate)){
+    if(dataEnteredIntoField(startDate) && validateDateFormat(startDate) && validateDateInRange(startDate) ){
         //alert("data entered is valid");
         return true;
     }else if(!(dataEnteredIntoField(startDate))){
@@ -67,7 +67,7 @@ function validateStartDate(){
 function validateEndDate(){
     //Need to know form ID --MW
     var endDate = document.getElementById("endDate").value;
-    if(dataEnteredIntoField(endDate) && validateDateFormat(endDate) && validateStartDateBeforeEndDate()){
+    if(dataEnteredIntoField(endDate) && validateDateFormat(endDate) && validateDateInRange(endDate)&& validateStartDateBeforeEndDate()){
         //alert("data entered is valid");
         return true;
     }else if(!(dataEnteredIntoField(endDate))){
@@ -92,7 +92,7 @@ function dataEnteredIntoField(inputData){
 
 //Generic Date Validation, does not care which form element is from
 function validateDateFormat(dateString) {
-    if (dateString.match(/^\d{4}-\d{2}-\d{2}$/)) {
+    if (dateString.match(/^\d{4}-\d{1,2}-\d{1,2}$/)) {
         //alert("Propper date format");
         return true;
     } else {
@@ -115,5 +115,41 @@ function validateStartDateBeforeEndDate() {
 
 }
 
+function validateDateInRange(dateString){
+    var dateArray = dateString.split("-");
+    //validation of year requirements?
+
+    //31 Day Months
+    if (memberOfArray([1, 3, 5, 7, 8, 10, 12], parseInt(dateArray[1]))){
+        return validateDateDay(dateArray[2], 31);
+    }
+    //30 Day Months
+    else if (memberOfArray([4, 6, 9, 11], dateArray[1])){
+        return validateDateDay(dateArray[2], 30);
+    }
+    //February
+    else if (dateArray[1] == 2){
+        return validateDateDay(dateArray[2], 29);
+
+    }
+}
+
+function validateDateDay(day, upperBound){
+    if(parseInt(day) < 0 || parseInt(day) > upperBound){
+        alert("Day can only range from 1-" + upperBound + " for selected month");
+        return false;
+    }else if(parseInt(day) > 0 || parseInt(day) <= upperBound){
+        return true;
+    }else{
+        alert("Wrong case");
+        return false;
+    }
+}
+
+function memberOfArray(arr, obj) {
+    //alert("Range: " +  arr + "  object: " + obj);
+    //alert("index at " + arr.indexOf(obj));
+    return (arr.indexOf(obj) != -1);
+}
 
 /**/
