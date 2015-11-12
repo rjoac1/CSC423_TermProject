@@ -21,7 +21,7 @@ function ui_show_search_promotion_form()
     echo "<H4>Enter keywords for item search. Some fields may be left blank.</H4>";
     echo "</center>";
     echo "<BR/>";
-    echo "<FORM action='retrieve_promotion_to_update.php' method='post'>";
+    echo "<FORM action='../../retrieve_promotion_to_update.php' method='post'>";
     echo "<table>";
 
     echo '<tr>';  //

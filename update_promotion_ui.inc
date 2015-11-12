@@ -13,7 +13,7 @@ require('retrieve_dropdown_values_utility.inc');
 function ui_show_update_promotion_form($promoCode, $name,
                                        $description, $amountOff, $promoType)
 {
-    $script = "<script type='text/javascript' src='NewPromotionValidation.js'> </script>";
+    $script = "<script type='text/javascript' src='Javascript/NewPromotionValidation.js'> </script>";
     ui_print_header_with_head_elements("UPDATE PROMOTION", $script);
 
     echo "<div class='center'>";

@@ -17,7 +17,7 @@ function ui_show_search_event_form()
     echo "<H4>Enter keywords for event search. Some fields may be left blank.</H4>";
     echo "</center>";
     echo "<BR/>";
-    echo "<FORM action='retrieve_events_to_update.php' method='post'>";
+    echo "<FORM action='../../retrieve_events_to_update.php' method='post'>";
     echo "<table>";
 
     echo '<tr>';  // Event Code

@@ -9,15 +9,11 @@ function ui_show_new_event_form()
 {
     //Create an HTML document using the ECHO statements
 
-    $script = "<script type='text/javascript' src='ValidateEvent.js'>  </script>";
-    $script1 = "<link rel=\"stylesheet\" href=\"http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css\">";
-    $script2 = "<script src=\"http://code.jquery.com/jquery-1.10.2.js\"></script>";
-    $script3 = "<script src=\"http://code.jquery.com/ui/1.11.0/jquery-ui.js\"></script>";
-    $args = array($script1, $script2, $script3, $script);
-    ui_print_header_with_head_elements("ADD NEW EVENT", $args);
+    $script = "<script type='text/javascript' src='../../Javascript/ValidateEvent.js'>  </script>";
+    ui_print_header_with_head_elements("ADD NEW EVENT", $script);
     
     echo "<div class='center'>";
-    echo "<FORM action='insert_event.php' method='post'>";
+    echo "<FORM action='../Elements/insert_event.php' method='post'>";
     echo "<table>";
 
     echo '<tr>';  // Event Code

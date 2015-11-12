@@ -41,7 +41,7 @@ function isEventCodeValid(eventCode){
     }else if(eventCode.match(/^[A-Z]{3}\d{8}[A-Z]$/)){ return true; }
 }
 
-//Validation of the event name
+//Javascript of the event name
 function validateName(){
     //Need to know form ID --MW
     var inputName = document.getElementById("eventName").value;
@@ -55,7 +55,7 @@ function validateName(){
     }
 }
 
-//Date Validation
+//Date Javascript
 function validateBothDates(){
     return validateStartDate() && validateEndDate();
 }
@@ -101,7 +101,7 @@ function dataEnteredIntoField(inputData){
     return (!(inputData == null || inputData == ""));
 }
 
-//Generic Date Validation, does not care which form element is from
+//Generic Date Javascript, does not care which form element is from
 function validateDateFormat(dateString) {
     if (dateString.match(/^\d{4}-\d{1,2}-\d{1,2}$/)) {
         //alert("Propper date format");

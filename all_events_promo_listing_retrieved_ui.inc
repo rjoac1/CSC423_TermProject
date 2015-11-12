@@ -9,7 +9,7 @@ function ui_show_events_retrieved($message, $events_retrieved_result)
 {
     //----------------------------------------------------------
     // Start the html page
-    ui_print_header("Change This");
+    ui_print_header(" This");
     echo "<center><h3>Change this too.</h3></center>";
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname
@@ -23,7 +23,7 @@ function ui_show_events_retrieved($message, $events_retrieved_result)
     }
 
     echo <<<END
-    <center><input type="submit" value="Submit"/></center><br />
+    <center></center><br />
     <table border="1" cellspacing="0" cellpadding="5px">
     <tr>
     <th></th>
@@ -55,6 +55,7 @@ END;
 
         echo '</tr>';
 
+        retrieve_and_print_associated_promos($eventCode);
 
     }
 
@@ -63,6 +64,26 @@ END;
 
     ui_print_footer_with_main_menu_button();
 }
-function ui_show_eventpromo_retrieved($message, $events_retrieved_result)
+
+function retrieve_and_print_associated_promos($eventCode){
+    $sql = "";
+    $error_message = "Could not successfully run query ($sql) from DB: ";
+
+
+    $search_events_result = get_result_set_from_select_query($sql,$error_message);
+
+    //$result is non-empty. So count the rows
+    $numrows = mysql_num_rows($search_events_result);
+
+    //Create an appropriate message
+    $message = "";
+    if ($numrows == 0)
+        $message = "No events found in database";
+    ui_show_eventpromo_retrieved($message, $search_events_result);
+}
+
+function ui_show_eventpromo_retrieved($message, $events_retrieved_result){
+
+}
 
 ?>

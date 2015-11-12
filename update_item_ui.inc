@@ -13,7 +13,7 @@ require('retrieve_dropdown_values_utility.inc');
 function ui_show_update_item_form($itemNumber, $itemDescription,
                                   $category, $deptName, $purchCost, $retail)
 {
-    $script = "<script type='text/javascript' src='NewItemValidation.js'> </script>";
+    $script = "<script type='text/javascript' src='Javascript/NewItemValidation.js'> </script>";
     ui_print_header_with_head_elements("UPDATE ITEM", $script);
 
     echo <<<END

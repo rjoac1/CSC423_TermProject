@@ -20,7 +20,7 @@ function ui_show_search_promotion_form()
     echo "<div class='center'>";
     echo "<center><H3>SEARCH FOR PROMOTION TO ADD ITEMS TO</H3></center>";
     echo "<BR/>";
-    echo "<FORM action='retrieve_promotions.php' method='post'>";
+    echo "<FORM action='../../retrieve_promotions.php' method='post'>";
     foreach($itemNumbersSelected as $itemNo)
     {
         echo '<input type="hidden" name="itemNumbers[]" value="'.$itemNo.'" />';
