@@ -49,7 +49,7 @@ function ui_show_new_promotion_form()
     echo '<TD align="right"><input type="reset" value="Reset" /></TD>';
     echo '<TD align="right"><input type="submit" value="Submit New Promotion Data" onclick="return validate()" /></TD>';
     echo '</tr>';
-
+    echo '<tr></tr>';
     echo "</table>";
     echo "</FORM>";
     echo "</div>";
