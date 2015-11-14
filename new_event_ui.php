@@ -9,11 +9,11 @@ function ui_show_new_event_form()
 {
     //Create an HTML document using the ECHO statements
 
-    $script = "<script type='text/javascript' src='../../Javascript/ValidateEvent.js'>  </script>";
+    $script = "<script type='text/javascript' src='Javascript/ValidateEvent.js'>  </script>";
     ui_print_header_with_head_elements("ADD NEW EVENT", $script);
     
     echo "<div class='center'>";
-    echo "<FORM action='../Elements/insert_event.php' method='post'>";
+    echo "<FORM action='insert_event.php' method='post'>";
     echo "<table>";
 
     echo '<tr>';  // Event Code

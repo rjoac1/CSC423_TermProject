@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Ryan
- * Date: 11/10/2015
- * Time: 11:04 AM
+ * Date: 10/26/2015
+ * Time: 1:05 PM
  */
 require('ui_utilities.inc');
 // Main Control Logic: It just calls a function
@@ -12,18 +12,20 @@ ui_show_search_promotion_form();
 //------------------------------------------------------------
 function ui_show_search_promotion_form()
 {
+    $itemNumbersSelected = $_POST['itemNumbers'];
+
     //Create an HTML document using the ECHO statements
-    ui_print_header("UPDATE PROMOTION");
+    ui_print_header("ADD ITEMS TO PROMOTION");
 
     echo "<div class='center'>";
-    echo "<center>";
-    echo "<H3>Search for Promotion to update</H3>";
-    echo "<H4>Enter keywords for Promotion search. Some fields may be left blank.</H4>";
-    echo "</center>";
+    echo "<center><H3>SEARCH FOR PROMOTION TO ADD ITEMS TO</H3></center>";
     echo "<BR/>";
-    echo "<FORM action='../../retrieve_promotion_to_update.php' method='post'>";
+    echo "<FORM action='retrieve_promotions.php' method='post'>";
+    foreach($itemNumbersSelected as $itemNo)
+    {
+        echo '<input type="hidden" name="itemNumbers[]" value="'.$itemNo.'" />';
+    }
     echo "<table>";
-
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Promotion Code:</SPAN></TD>';
     echo '<TD><INPUT NAME="promoCode" TYPE="text" SIZE=50/></TD>';

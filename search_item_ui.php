@@ -22,7 +22,7 @@ function ui_show_search_item_form()
     echo "<H4>Enter keywords for item search. Some fields may be left blank.</H4>";
     echo "</center>";
     echo "<BR/>";
-    echo "<FORM action='../../retrieve_items.php' method='post'>";
+    echo "<FORM action='retrieve_items.php' method='post'>";
     echo "<table>";
 
     echo '<tr>';  //

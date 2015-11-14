@@ -15,11 +15,11 @@ function ui_show_new_promotion_form()
 {
     //Create an HTML document using the ECHO statements
 
-    $script = "<script type='text/javascript' src='../../Javascript/NewPromotionValidation.js'>  </script>";
+    $script = "<script type='text/javascript' src='Javascript/NewPromotionValidation.js'>  </script>";
     ui_print_header_with_head_elements("ADD NEW PROMOTION", $script);
 
     echo "<div class='center'>";
-    echo "<FORM action='../Elements/insert_promotion.php' method='post'>";
+    echo "<FORM action='insert_promotion.php' method='post'>";
     echo "<table>";
 
     echo '<tr>';  //

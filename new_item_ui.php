@@ -13,11 +13,11 @@ ui_show_new_item_form();
 //------------------------------------------------------------
 function ui_show_new_item_form()
 {
-    $script = "<script type='text/javascript' src='../../Javascript/NewItemValidation.js'> </script>";
+    $script = "<script type='text/javascript' src='Javascript/NewItemValidation.js'> </script>";
     ui_print_header_with_head_elements("ADD NEW ITEM", $script);
 
     echo "<div class='center'>";
-    echo "<FORM action='../Elements/insert_item.php' method='post'>";
+    echo "<FORM action='insert_item.php' method='post'>";
     echo "<table>";
 
     echo '<tr>';  //
