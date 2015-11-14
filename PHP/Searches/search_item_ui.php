@@ -2,23 +2,27 @@
 /**
  * Created by PhpStorm.
  * User: Ryan
- * Date: 10/21/2015
- * Time: 3:02 PM
+ * Date: 10/23/2015
+ * Time: 12:02 PM
  */
 //------------------------------------------------------------
+require('ui_utilities.inc');
 // Main Control Logic: It just calls a function
-ui_show_new_item_form();
+ui_show_search_item_form();
+
 //------------------------------------------------------------
-function ui_show_new_item_form()
+function ui_show_search_item_form()
 {
     //Create an HTML document using the ECHO statements
-    echo "<HTML>";
-    echo "<HEAD>";
-    echo "<script type='text/javascript' src='NewItemValidation.js'>  </script>";
-    echo "</HEAD>";
-    echo "<BODY>";
+    ui_print_header("ADD ITEMS TO PROMOTION");
+
+    echo "<div class='center'>";
+    echo "<center>";
+    echo "<H3>Search for Items to Add to Promotion</H3>";
+    echo "<H4>Enter keywords for item search. Some fields may be left blank.</H4>";
+    echo "</center>";
     echo "<BR/>";
-    echo "<FORM action='insert_item.php' method='post'>";
+    echo "<FORM action='../../retrieve_items.php' method='post'>";
     echo "<table>";
 
     echo '<tr>';  //
@@ -42,19 +46,13 @@ function ui_show_new_item_form()
     echo '</tr>';
 
     echo '<tr>';  //
-    echo '<TD><SPAN ALIGN=RIGHT>Purchase Cost:</SPAN></TD>';
-    echo '<TD><INPUT NAME="purchaseCost" TYPE="text" SIZE=50/></TD>';
+    echo '<TD align="right"><input type="reset" value="Reset" /></TD>';
+    echo '<TD align="right"><input type="submit" value="Search Items"/></TD>';
     echo '</tr>';
 
-    echo '<tr>';  //
-    echo '<TD><SPAN ALIGN=RIGHT>Full Retail Price:</SPAN></TD>';
-    echo '<TD><INPUT NAME="retailPrice" TYPE="text" SIZE=50/></TD>';
-    echo '</tr>';
     echo "</table>";
-    echo '<input type="reset" value="Reset" />';
-    echo '<input type="submit" value="Submit New Item Data" onclick="return validate()" />';
-
     echo "</FORM>";
-    echo "</BODY>";
-    echo "</HTML>";
+    echo "</div>";
+
+    ui_print_footer_with_main_menu_button();
 }

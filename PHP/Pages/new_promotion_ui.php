@@ -5,6 +5,8 @@
  * Date: 10/21/2015
  * Time: 3:02 PM
  */
+require('ui_utilities.inc');
+require('retrieve_dropdown_values_utility.inc');
 //------------------------------------------------------------
 // Main Control Logic: It just calls a function
 ui_show_new_promotion_form();
@@ -12,13 +14,12 @@ ui_show_new_promotion_form();
 function ui_show_new_promotion_form()
 {
     //Create an HTML document using the ECHO statements
-    echo "<HTML>";
-    echo "<HEAD>";
-    echo "<script type='text/javascript' src='NewPromotionValidation.js'>  </script>";
-    echo "</HEAD>";
-    echo "<BODY>";
-    echo "<BR/>";
-    echo "<FORM action='insert_promotion.php' method='post'>";
+
+    $script = "<script type='text/javascript' src='../../Javascript/NewPromotionValidation.js'>  </script>";
+    ui_print_header_with_head_elements("ADD NEW PROMOTION", $script);
+
+    echo "<div class='center'>";
+    echo "<FORM action='../Elements/insert_promotion.php' method='post'>";
     echo "<table>";
 
     echo '<tr>';  //
@@ -38,18 +39,24 @@ function ui_show_new_promotion_form()
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Promotion Type:</SPAN></TD>';
-    echo '<TD><select INPUT ID="promotionType" NAME="promotionType">
-              <option value="Dollar">Dollar</option>
-              <option value="Percent">Percent</option>
-              </select>
-          </TD>';
+    echo '<TD><select ID="promotionType" NAME="promotionType">';
+
+    $dropDownValues = get_promoType_dropdown_values();
+    while($dropDownValue = mysql_fetch_array($dropDownValues)){
+        echo "<option value='$dropDownValue[0]'>$dropDownValue[0]</option>";
+    }
+
+    echo '</select></TD>';
+    echo '</tr>';
+
+    echo '<tr>';  //
+    echo '<TD align="right"><input type="reset" value="Reset" /></TD>';
+    echo '<TD align="right"><input type="submit" value="Submit New Promotion Data" onclick="return validate()" /></TD>';
     echo '</tr>';
 
     echo "</table>";
-    echo '<input type="reset" value="Reset" />';
-    echo '<input type="submit" value="Submit New Item Data" onclick="return validate()" />';
-
     echo "</FORM>";
-    echo "</BODY>";
-    echo "</HTML>";
+    echo "</div>";
+
+    ui_print_footer_with_main_menu_button();
 }

@@ -2,43 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css" />
-    <title>Main Menu</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>Retail Advertising Data Management System: Main Menu</title>
 </head>
 <body>
-<div class="buttonSection">
-    <table>
-        <tr>
-            <td>
-                <input type="button" value="Add Item" onclick="window.location='new_item_ui.php'">
-            </td>
-            <td>
-                <input type="button" value="Add Promotion" onclick="window.location='new_promotion_ui.php'">
-            </td>
-            <td>
-                <input type="button" value="Add Event" onclick="window.location='new_event_ui.php'">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="button" value="Update Item">
-            </td>
-            <td>
-                <input type="button" value="Update Promotion">
-            </td>
-            <td>
-                <input type="button" value="Update Event" >
-            </td>
-        </tr>
-        <tr colspan=3>
-            <center>
-                <td></td>
-                <td>
-                    <input type="button" value="Add Item to Promotion">
-                </td>
-                <td></td>
-        </tr>
-    </table>
-</div>
+    <center>
+        <h1>Retail Advertising Data Management System</h1>
+        <h2>Main Menu</h2>
+        <hr />
+
+        <div class="buttonSection">
+            <h3>ADD NEW</h3>
+            <table class="buttonTable" cellspacing="0" cellpadding="5px">
+                <tr>
+                    <td><input type="button" value="Add Item" onclick="window.location='PHP/Pages/new_item_ui.php'" /></td>
+                    <td><input type="button" value="Add Promotion" onclick="window.location='PHP/Pages/new_promotion_ui.php'" /></td>
+                    <td><input type="button" value="Add Event" onclick="window.location='PHP/Pages/new_event_ui.php'" /></td>
+                </tr>
+            </table>
+            <hr />
+
+            <h3>UPDATE</h3>
+            <table class="buttonTable" cellspacing="0" cellpadding="5px">
+                <tr>
+                    <td><input type="button" name="updateItem" value="Update Item"
+                               onclick="window.location='PHP/Searches/search_item_to_update_ui.php'"/></td>
+                    <td><input type="button" value="Add Items to Promotion"
+                               onclick="window.location='PHP/Searches/search_item_ui.php'"/></td>
+                </tr>
+                <tr>
+                    <td><input type="button" name="updatePromotion" value="Update Promotion" onclick="window.location='PHP/Searches/search_promotion_to_update_ui.php'"/></td>
+                    <td><input type="button" name="addPromotionsToAdEvent" value="Add Promotion to Ad Event" /></td>
+                </tr>
+                <tr><td colspan="2"><input type="button" name="updateEvent" value="Update Event" onclick="window.location='PHP/Searches/search_event_to_update_ui.php'"/></td></tr>
+            </table>
+            <hr />
+
+            <h3>REPORTS</h3>
+            <table class="buttonTable" cellspacing="0" cellpadding="5px">
+                <tr>
+                    <td><input type="button" name="eventPromoReport" value="View Event's Promotions"
+                               onclick="window.location='retrieve_events_promo_listing.php'"></td>
+                </tr>
+            </table>
+        </div>
+    </center>
 </body>
 </html>

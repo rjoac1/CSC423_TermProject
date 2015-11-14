@@ -1,0 +1,33 @@
+body{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+
+.center{
+    display:inline-block;
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+div.buttonSection{
+    display:inline-block;
+    width: 60%;
+    padding: 10px;
+    text-align: center;
+}
+.buttonSection h3{
+    text-decoration: underline;
+}
+.buttonTable{
+    display:inline-block;
+    margin:auto;
+    width: auto;
+    padding: 10px;
+    text-align: center;
+}
+.buttonSection INPUT[type="button"]{
+    width:100%;
+}

@@ -2,16 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: Ryan
- * Date: 10/21/2015
- * Time: 3:16 PM
+ * Date: 10/26/2015
+ * Time: 3:43 PM
  */
 require('ui_utilities.inc');
-function ui_show_item_insert_result($message, $itemNumber, $itemDescription, $category,
-                                    $departmentName, $purchaseCost, $retailPrice)
-{
+function ui_show_promotion_item_insert_result($message){
     //----------------------------------------------------------
     // Start the html page
-    ui_print_header("ADD NEW ITEM");
+    ui_print_header("ADD ITEM TO PROMOTION");
 
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname
@@ -19,7 +17,7 @@ function ui_show_item_insert_result($message, $itemNumber, $itemDescription, $ca
     {
         if ($message != "")
         {
-            echo '<p><center><font color="blue">'.$message.'</font></center></p><br />';
+            echo '<center><font color="blue">'.$message.'</font></center><br />';
         }
     }
 
