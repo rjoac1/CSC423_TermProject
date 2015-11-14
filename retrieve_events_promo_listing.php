@@ -15,7 +15,7 @@ function get_all_promo_events()
     connect_and_select_db(DB_SERVER, DB_UN, DB_PWD,DB_NAME);
 
 
-    $sql = "SELECT EventCode, Name, StartDate, EndDate FROM AdEvent ORDER BY AdEvent.StartDate ASC";
+    $sql = "SELECT * FROM AdEvent ORDER BY AdEvent.StartDate ASC";
 
     $error_message = "Could not successfully run query ($sql) from DB: ";
 
