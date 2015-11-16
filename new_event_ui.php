@@ -1,5 +1,5 @@
 <?php
-require('ui_utilities.inc');
+require('../GUI/ui_utilities.inc');
 //------------------------------------------------------------
 // Main Control Logic: It just calls a function
 ui_show_new_event_form();

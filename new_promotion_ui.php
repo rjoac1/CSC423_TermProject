@@ -5,7 +5,7 @@
  * Date: 10/21/2015
  * Time: 3:02 PM
  */
-require('ui_utilities.inc');
+require('../GUI/ui_utilities.inc');
 require('retrieve_dropdown_values_utility.inc');
 //------------------------------------------------------------
 // Main Control Logic: It just calls a function

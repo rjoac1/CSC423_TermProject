@@ -89,34 +89,44 @@ function retrieve_and_print_associated_promos($eventCode){
 }
 
 function ui_show_eventpromo_retrieved($message, $events_retrieved_result){
-    echo <<<END
-    <table border="1" cellspacing="0" cellpadding="5px" bgcolor="white">
-    <tr>
-    <th>Promomotion Name</th>
-    <th>Description Name</th>
-    <th>Amount Off</th>
-    <th>Promotion Type</th>
-    </tr>
+    $numrows = mysql_num_rows($events_retrieved_result);
+    if($numrows == 0){
+        echo <<<END2
+        <table border="1" cellspacing="0" cellpadding="5px" bgcolor="white">
+        <tr><td colspan="6">
+        There are no associated promotions for this event at this time.
+        </td></tr></table>
+END2;
+    }else {
+        echo <<<END
+        <table border="1" cellspacing="0" cellpadding="5px" bgcolor="white">
+        <tr>
+        <th>Promomotion Name</th>
+        <th>Description Name</th>
+        <th>Amount Off</th>
+        <th>Promotion Type</th>
+        </tr>
 END;
-    while($row = mysql_fetch_assoc($events_retrieved_result)) {
-        $promoName = $row['Name'];
-        $description = $row['Description'];
-        $amountOff = $row['AmountOff'];
-        $promoType = $row['PromoType'];
+        while ($row = mysql_fetch_assoc($events_retrieved_result)) {
+            $promoName = $row['Name'];
+            $description = $row['Description'];
+            $amountOff = $row['AmountOff'];
+            $promoType = $row['PromoType'];
 
-        echo "<tr>";
+            echo "<tr>";
 
-        echo "<td>$promoName</td>";
-        echo "<td>$description</td>";
-        echo "<td>$amountOff</td>";
-        echo "<td>$promoType</td>";
+            echo "<td>$promoName</td>";
+            echo "<td>$description</td>";
+            echo "<td>$amountOff</td>";
+            echo "<td>$promoType</td>";
 
-        echo '</tr>';
+            echo '</tr>';
 
+        }
+
+        echo "</table>";
+        echo "<br />";
     }
-
-    echo "</table>";
-    echo"<br />";
 }
 
 ?>
