@@ -79,7 +79,7 @@ function validateEndDate(){
     //Need to know form ID --MW
     var endDate = document.getElementById("endDate").value;
     if(dataEnteredIntoField(endDate) && validateDateFormat(endDate) && validateDateInRange(endDate)&& validateStartDateBeforeEndDate()){
-        //alert("data entered is valid");
+        alert(endDate);
         return true;
     }else if(!(dataEnteredIntoField(endDate))){
         alert("Must enter a ending date for a promotion.");
