@@ -20,14 +20,16 @@ function get_events_matching_search_criteria()
     $startDate = mysql_real_escape_string($_POST['startDate']);
     $endDate = mysql_real_escape_string($_POST['endDate']);
     $description = mysql_real_escape_string($_POST['description']);
+    $type = mysql_real_escape_string($_POST['type']);
 
-    $sql = "SELECT EventCode, EventName, StartDate, EndDate, Description,
-        FROM   Event
+    $sql = "SELECT EventCode, AdEvent.Name, StartDate, EndDate, Description,AdType
+        FROM   AdEvent
         WHERE  EventCode LIKE '%".$eventCode."%'
-        AND EventName LIKE '%".$eventName."%'
+        AND AdEvent.Name LIKE '%".$eventName."%'
         AND StartDate LIKE '%".$startDate."%'
         AND EndDate LIKE '%".$endDate."%'
-        AND Description LIKE '%".$description."'";
+        AND Description LIKE '%".$description."%'
+        AND AdEvent.AdType LIKE '%".$type."%'";
 
     $error_message = "Could not successfully run query ($sql) from DB: ";
 
@@ -39,8 +41,8 @@ function get_events_matching_search_criteria()
     //Create an appropriate message
     $message = "";
     if ($numrows == 0)
-        $message = "No items found in database";
-    ui_show_items_retrieved($message, $search_events_result);
+        $message = "No events found in database";
+    ui_show_events_retrieved($message, $search_events_result);
 }
 ?>
 
