@@ -2,7 +2,6 @@
 /**
  * Created by PhpStorm.
  * User: douglasschultz1
- *
  */
 require('ui_utilities.inc');
 
@@ -93,14 +92,14 @@ function ui_show_eventpromo_retrieved($message, $events_retrieved_result){
     $numrows = mysql_num_rows($events_retrieved_result);
     if($numrows == 0){
         echo <<<END2
-        <table border="1" cellspacing="0" cellpadding="5px" bgcolor="white" width="900">
+        <table border="1" cellspacing="0" cellpadding="5px" bgcolor="white" width="100%">
         <tr><td colspan="6">
         There are no associated promotions for this event at this time.
         </td></tr></table>
 END2;
     }else {
         echo <<<END
-        <table border="1" cellspacing="0" cellpadding="5px" bgcolor="white" width="900">
+        <table border="1" cellspacing="0" cellpadding="5px" bgcolor="white" width="100%">
         <tr>
         <th>Promomotion Name</th>
         <th>Description Name</th>
