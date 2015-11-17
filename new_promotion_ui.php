@@ -6,7 +6,6 @@
  * Time: 3:02 PM
  */
 require('ui_utilities.inc');
-require('retrieve_dropdown_values_utility.inc');
 //------------------------------------------------------------
 // Main Control Logic: It just calls a function
 ui_show_new_promotion_form();
@@ -15,7 +14,7 @@ function ui_show_new_promotion_form()
 {
     //Create an HTML document using the ECHO statements
 
-    $script = "<script type='text/javascript' src='Javascript/NewPromotionValidation.js'>  </script>";
+    $script = "<script type='text/javascript' src='NewPromotionValidation.js'>  </script>";
     ui_print_header_with_head_elements("ADD NEW PROMOTION", $script);
 
     echo "<div class='center'>";
@@ -39,14 +38,11 @@ function ui_show_new_promotion_form()
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Promotion Type:</SPAN></TD>';
-    echo '<TD><select ID="promotionType" NAME="promotionType">';
-
-    $dropDownValues = get_promoType_dropdown_values();
-    while($dropDownValue = mysql_fetch_array($dropDownValues)){
-        echo "<option value='$dropDownValue[0]'>$dropDownValue[0]</option>";
-    }
-
-    echo '</select></TD>';
+    echo '<TD><select INPUT ID="promotionType" NAME="promotionType">
+              <option value="Dollar">Dollar</option>
+              <option value="Percent">Percent</option>
+              </select>
+          </TD>';
     echo '</tr>';
 
     echo '<tr>';  //
