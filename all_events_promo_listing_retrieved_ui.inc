@@ -42,19 +42,19 @@ END;
         $description = $row['Description'];
         $type = $row['AdType'];
 
-        echo "<tr>";
+        echo "<tr  bgcolor='#a9a9a9'>";
 
-        echo "<td>$eventCode</td>";
-        echo "<td>$eventName</td>";
-        echo "<td>$startDate</td>";
-        echo "<td>$endDate</td>";
-        echo "<td>$description</td>";
-        echo "<td>$type</td>";
+        echo "<td><b>$eventCode</b></td>";
+        echo "<td><b>$eventName</b></td>";
+        echo "<td width='90'><b>$startDate</b></td>";
+        echo "<td width='90'><b>$endDate</b></td>";
+        echo "<td><b>$description</b></td>";
+        echo "<td><b>$type</b></td>";
 
         echo '</tr>';
 
         echo '<tr>';
-        echo '<td colspan="6" bgcolor="#a9a9a9">';
+        echo '<td colspan="6">';
         retrieve_and_print_associated_promos($eventCode);
         echo "</td>";
         echo '</tr>';
@@ -92,14 +92,14 @@ function ui_show_eventpromo_retrieved($message, $events_retrieved_result){
     $numrows = mysql_num_rows($events_retrieved_result);
     if($numrows == 0){
         echo <<<END2
-        <table border="1" cellspacing="0" cellpadding="5px" bgcolor="white">
+        <table border="1" cellspacing="0" cellpadding="5px" bgcolor="white" width="900">
         <tr><td colspan="6">
         There are no associated promotions for this event at this time.
         </td></tr></table>
 END2;
     }else {
         echo <<<END
-        <table border="1" cellspacing="0" cellpadding="5px" bgcolor="white">
+        <table border="1" cellspacing="0" cellpadding="5px" bgcolor="white" width="900">
         <tr>
         <th>Promomotion Name</th>
         <th>Description Name</th>
