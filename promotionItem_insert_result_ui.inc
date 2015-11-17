@@ -9,7 +9,7 @@ require('ui_utilities.inc');
 function ui_show_promotion_item_insert_result($message){
     //----------------------------------------------------------
     // Start the html page
-    ui_print_header("ADD ITEM TO PROMOTION");
+    ui_print_header("ADD EVENT TO PROMOTION");
 
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname

@@ -6,7 +6,6 @@
  * Time: 11:38 AM
  */
 require('ui_utilities.inc');
-
 function ui_show_items_retrieved($message, $items_retrieved_result)
 {
     //----------------------------------------------------------
@@ -15,7 +14,6 @@ function ui_show_items_retrieved($message, $items_retrieved_result)
     echo "<center><h3>Select the Items you wish to add to a Promotion and press the Submit button.</h3></center>";
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname
-
     if ($message)
     {
         if ($message != "")
@@ -23,7 +21,6 @@ function ui_show_items_retrieved($message, $items_retrieved_result)
             echo '<center><font color="blue">'.$message.'</font></center><br />';
         }
     }
-
     echo <<<END
     <form action="search_promotions_ui.php" method="post">
     <center><input type="submit" value="Submit"/></center><br />
@@ -46,9 +43,7 @@ END;
         $deptartmentName = $row['DepartmentName'];
         $purchaseCost = $row['PurchaseCost'];
         $fullRetailPrice = $row['FullRetailPrice'];
-
         echo "<tr>";
-
         echo "<td><center><INPUT TYPE='checkbox' NAME='itemNumbers[]' VALUE='$itemNumber' /></center></td>";
         echo "<td>$itemNumber</td>";
         echo "<td>$itemDescription</td>";
@@ -56,15 +51,12 @@ END;
         echo "<td>$deptartmentName</td>";
         echo "<td>$purchaseCost</td>";
         echo "<td>$fullRetailPrice</td>";
-
         echo '</tr>';
     }
-
     echo "</table>";
     echo"<br />";
     echo "<center><input type='submit' value='Submit'/></center>";
     echo "</form>";
-
     ui_print_footer_with_main_menu_button();
 }
 ?>
