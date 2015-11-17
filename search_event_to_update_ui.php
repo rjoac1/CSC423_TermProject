@@ -1,23 +1,23 @@
 <?php
-require('ui_utilities.inc');
+/** Created by PhpStorm. ...*/
 //------------------------------------------------------------
+require('ui_utilities.inc');
 // Main Control Logic: It just calls a function
-ui_show_new_event_form();
+ui_show_search_event_form();
 
 //------------------------------------------------------------
-function ui_show_new_event_form()
+function ui_show_search_event_form()
 {
     //Create an HTML document using the ECHO statements
+    ui_print_header("UPDATE EVENT");
 
-    $script = "<script type='text/javascript' src='Javascript/ValidateEvent.js'>  </script>";
-    $script1 = "<link rel=\"stylesheet\" href=\"http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css\">";
-    $script2 = "<script src=\"http://code.jquery.com/jquery-1.10.2.js\"></script>";
-    $script3 = "<script src=\"http://code.jquery.com/ui/1.11.4/jquery-ui.js\"></script>";
-    $args = array($script1, $script2, $script3, $script);
-    ui_print_header_with_head_elements("ADD NEW EVENT", $args);
-    
     echo "<div class='center'>";
-    echo "<FORM action='insert_event.php' method='post'>";
+    echo "<center>";
+    echo "<H3>Search for Event to update</H3>";
+    echo "<H4>Enter keywords for event search. Some fields may be left blank.</H4>";
+    echo "</center>";
+    echo "<BR/>";
+    echo "<FORM action='retrieve_events_to_update.php' method='post'>";
     echo "<table>";
 
     echo '<tr>';  // Event Code
@@ -52,7 +52,7 @@ function ui_show_new_event_form()
 
     echo '<tr>';
     echo '<td align="right"><input type="reset" value="Reset" /></td>';
-    echo '<td align="right"><input type="submit" onclick="return validateForm();" value="Submit New Event Data" /></td>';
+    echo '<td align="right"><input type="submit" value="Search Events"/></td>';
     echo '</tr>';
 
     echo "</table>";
