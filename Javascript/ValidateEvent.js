@@ -63,7 +63,7 @@ function validateBothDates(){
 function validateStartDate(){
     //Need to know form ID --MW
     var startDate = document.getElementById("startDate").value;
-    if(dataEnteredIntoField(startDate) && validateDateFormat(startDate) && validateDateInRange(startDate) ){
+    if(dataEnteredIntoField(startDate) && validateDateFormat(startDate) ){
         //alert("data entered is valid");
         return true;
     }else if(!(dataEnteredIntoField(startDate))){
@@ -78,8 +78,7 @@ function validateStartDate(){
 function validateEndDate(){
     //Need to know form ID --MW
     var endDate = document.getElementById("endDate").value;
-    if(dataEnteredIntoField(endDate) && validateDateFormat(endDate) && validateDateInRange(endDate)&& validateStartDateBeforeEndDate()){
-        alert(endDate);
+    if(dataEnteredIntoField(endDate) && validateDateFormat(endDate) && validateStartDateBeforeEndDate() ){
         return true;
     }else if(!(dataEnteredIntoField(endDate))){
         alert("Must enter a ending date for a promotion.");
@@ -89,7 +88,7 @@ function validateEndDate(){
         return false;
     }else if(!(validateStartDateBeforeEndDate())){
         alert("End date must not be before the start date for an event.");
-        return false
+        return false;
     }
 }
 
@@ -124,7 +123,7 @@ function validateStartDateBeforeEndDate() {
     }else{ return false; }
 
 
-}
+}/*
 
 function validateDateInRange(dateString){
     var dateArray = dateString.split("-");
