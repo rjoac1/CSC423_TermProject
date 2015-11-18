@@ -16,7 +16,7 @@ add_item_to_promotion();
 function add_item_to_promotion()
 {
     connect_and_select_db(DB_SERVER, DB_UN, DB_PWD,DB_NAME);
-//test
+
     $itemNumbers = $_POST['itemNumbers'];
     $promoCode = $_REQUEST['promoCode'];
     //echo "Item number = $itemNumber \nPromoCode = $promoCode";
