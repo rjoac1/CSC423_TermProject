@@ -14,8 +14,20 @@ function get_all_promo_events()
 {
     connect_and_select_db(DB_SERVER, DB_UN, DB_PWD,DB_NAME);
 
+    $startDate = mysql_real_escape_string($_POST['startDate']);
+    $endDate = mysql_real_escape_string($_POST['endDate']);
 
-    $sql = "SELECT * FROM AdEvent ORDER BY AdEvent.StartDate ASC";
+    //Retrieve all events that occur during the time period including the outer bounds
+    if()
+
+    $sql = "SELECT * FROM AdEvent WHERE".
+            "StartDate = '$startDate' OR StartDate = '$endDate' ".
+            "OR EndDate = '$startDate' OR EndDate = '$endDate' ".
+            "OR StartDate BETWEEN '$startDate' AND '$endDate' ".
+            "OR EndDate BETWEEN '$startDate' AND '$endDate'".
+            "ORDER BY AdEvent.StartDate ASC";
+
+    //$sql = "SELECT * FROM AdEvent ORDER BY AdEvent.StartDate ASC";            --older, incorrect version
 
     $error_message = "Could not successfully run query ($sql) from DB: ";
 
