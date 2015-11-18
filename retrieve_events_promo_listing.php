@@ -18,14 +18,21 @@ function get_all_promo_events()
     $endDate = mysql_real_escape_string($_POST['endDate']);
 
     //Retrieve all events that occur during the time period including the outer bounds
-    if()
+    if(($startDate == null) || ($startDate == "")){
+        $startDate = "0000-00-00";
+    }
+    if(($endDate == null) || ($endDate == "")){
+        $endDate = "9999-99-99";
+    }
+    //$startDate = str_replace("-", "", $startDate);
+    //$endDate = str_replace("-", "", $endDate);
 
-    $sql = "SELECT * FROM AdEvent WHERE".
-            "StartDate = '$startDate' OR StartDate = '$endDate' ".
-            "OR EndDate = '$startDate' OR EndDate = '$endDate' ".
-            "OR StartDate BETWEEN '$startDate' AND '$endDate' ".
-            "OR EndDate BETWEEN '$startDate' AND '$endDate'".
-            "ORDER BY AdEvent.StartDate ASC";
+    $sql = "SELECT * FROM AdEvent WHERE ".
+            "(StartDate >= '$startDate' ".
+            "AND StartDate <= '$endDate') ".
+            "OR (EndDate >= '$startDate' ".
+            "AND EndDate <= '$endDate') ".
+            "ORDER BY AdEvent.StartDate ASC;";
 
     //$sql = "SELECT * FROM AdEvent ORDER BY AdEvent.StartDate ASC";            --older, incorrect version
 

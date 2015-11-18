@@ -1,16 +1,18 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: douglasschultz1
+ * User: Ryan
+ * Date: 10/26/2015
+ * Time: 11:38 AM
  */
 require('ui_utilities.inc');
 
-function ui_show_events_retrieved($message, $events_retrieved_result)
+function ui_show_promotions_to_add_to_event_retrieved($message, $promotions_retrieved_result)
 {
     //----------------------------------------------------------
     // Start the html page
-    ui_print_header("Change This");
-    echo "<center><h3>Change this too.</h3></center>";
+    ui_print_header("ADD PROMOTIONS TO EVENT");
+    echo "<center><h3>Select the Promotions you wish to add to an Event and press the Submit button.</h3></center>";
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname
 
@@ -23,37 +25,34 @@ function ui_show_events_retrieved($message, $events_retrieved_result)
     }
 
     echo <<<END
-    <form action="search_promotions_ui.php" method="post">
+    <form action="search_events_to_add_promotions_to_ui.php" method="post">
     <center><input type="submit" value="Submit"/></center><br />
     <table border="1" cellspacing="0" cellpadding="5px">
     <tr>
     <th></th>
-    <th>Event Code</th>
-    <th>Event Name</th>
-    <th>Start Date</th>
-    <th>End Date</th>
+    <th>PromoCode</th>
+    <th>Name</th>
     <th>Description</th>
-    <th>Type</th>
+    <th>Amount Off</th>
+    <th>Promotion Type</th>
     </tr>
 END;
-    while($row = mysql_fetch_assoc($events_retrieved_result))
+    while($row = mysql_fetch_assoc($promotions_retrieved_result))
     {
-        $eventCode = $row['EventCode'];
-        $eventName = $row['EventName'];
-        $startDate = $row['StartDate'];
-        $endDate = $row['EndDate'];
+        $promoCode = $row['PromoCode'];
+        $name = $row['Name'];
         $description = $row['Description'];
-        $type = $row['Type'];
+        $amountOff = $row['AmountOff'];
+        $promoType = $row['PromoType'];
 
         echo "<tr>";
 
-        echo "<td>$eventCode</td>";
-        echo "<td>$eventName</td>";
-        echo "<td>$startDate</td>";
-        echo "<td>$endDate</td>";
+        echo "<td><center><INPUT TYPE='checkbox' NAME='promoCodes[]' VALUE='$promoCode' /></center></td>";
+        echo "<td>$promoCode</td>";
+        echo "<td>$name</td>";
         echo "<td>$description</td>";
-        echo "<td>$type</td>";
-
+        echo "<td>$amountOff</td>";
+        echo "<td>$promoType</td>";
         echo '</tr>';
     }
 

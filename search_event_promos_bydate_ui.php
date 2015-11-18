@@ -15,11 +15,12 @@ ui_show_search_event_promo_form();
 function ui_show_search_event_promo_form()
 {
     //Create an HTML document using the ECHO statements
-    $args = "<script src=\"http://code.jquery.com/jquery-1.10.2.js\"></script>".
-            "<script src=\"http://code.jquery.com/ui/1.11.4/jquery-ui.js\"></script>".
-            "<script type=\"text/javascript\" src=\"Javascript/ValidateEvent.js\">  </script>";
-
-    ui_print_header("VIEW EVENTS AND PROMOTIONS", $args);
+    $script = "<script type='text/javascript' src='Javascript/ValidateEvent.js'>  </script>";
+    $script1 = "<link rel=\"stylesheet\" href=\"http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css\">";
+    $script2 = "<script src=\"http://code.jquery.com/jquery-1.10.2.js\"></script>";
+    $script3 = "<script src=\"http://code.jquery.com/ui/1.11.4/jquery-ui.js\"></script>";
+    $args = array($script1, $script2, $script3, $script);
+    ui_print_header_with_head_elements("VIEW EVENTS AND PROMOTIONS", $args);
 
     echo "<div class='center'>";
     echo "<center>";
@@ -33,12 +34,12 @@ function ui_show_search_event_promo_form()
 
     echo '<tr>';  // Start Date
     echo '<TD><SPAN ALIGN=RIGHT>Start Date:</SPAN></TD>';
-    echo '<TD><INPUT NAME="startDate"ID="startDate" TYPE="text" class="hasDatepicker" SIZE=50/></TD>';
+    echo "<TD><INPUT NAME='startDate' ID='startDate' TYPE='text' SIZE=50 /></TD>";
     echo '</tr>';
 
     echo '<tr>';  // End Date
     echo '<TD><SPAN ALIGN=RIGHT>End Date:</SPAN></TD>';
-    echo '<TD><INPUT NAME="endDate" ID="endDate" TYPE="text" class="hasDatepicker" SIZE=50/></TD>';
+    echo "<TD><INPUT NAME='endDate' ID='endDate' TYPE='text' SIZE=50 /></TD>";
     echo '</tr>';
 
     echo '<tr>';

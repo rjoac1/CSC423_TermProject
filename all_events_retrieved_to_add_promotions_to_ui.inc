@@ -6,14 +6,15 @@
  * Time: 11:38 AM
  */
 require('ui_utilities.inc');
-function ui_show_promotions_retrieved($message, $promotions_retrieved_result, $event_numbers)
+function ui_show_events_retrieved($message, $events_retrieved_result, $promoCodes)
 {
     //----------------------------------------------------------
     // Start the html page
-    ui_print_header("ADD events TO PROMOTION");
+    ui_print_header("ADD PROMOTIONS TO EVENT");
+
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname
-    echo "<center><h3>Select Promotion you wish to add events to.</h3></center>";
+    echo "<center><h3>Select Event you wish to add Promotions to.</h3></center>";
     if ($message)
     {
         if ($message != "")
@@ -21,44 +22,57 @@ function ui_show_promotions_retrieved($message, $promotions_retrieved_result, $e
             echo '<center><font color="blue">'.$message.'</font></center><br />';
         }
     }
+
     echo <<<END1
     <div class="center">
-    <form action="add_event_to_promotion.php" method="post">
+    <form action="add_promotions_to_event.php" method="post">
 END1;
-    foreach($event_numbers as $itemNo)
+    foreach($promoCodes as $promoCode)
     {
-        echo "<input type='hidden' name='eventNumbers[]' value='$itemNo' />";
+        echo "<input type='hidden' name='promoCodes[]' value='$promoCode' />";
     }
     echo <<<END2
     <table border="1" cellspacing="0" cellpadding="5px">
     <tr>
-    <th>Promo Code</th>
+    <th>Event Code</th>
     <th>Name</th>
+    <th>Start Date</th>
+    <th>End Date Off</th>
     <th>Description</th>
-    <th>Amount Off</th>
-    <th>Promo Type</th>
+    <th>Ad Type</th>
     </tr>
 END2;
-    while($row = mysql_fetch_assoc($promotions_retrieved_result))
+
+
+    while($row = mysql_fetch_assoc($events_retrieved_result))
     {
-        $promoCode = $row['PromoCode'];
+        $eventCode = $row['EventCode'];
         $name = $row['Name'];
+        $startDate = $row['StartDate'];
+        $endDate = $row['EndDate'];
         $description = $row['Description'];
-        $amountOff = $row['AmountOff'];
-        $promoType = $row['PromoType'];
+        $adType = $row['AdType'];
+
         echo "<tr>";
-        echo "<td><center><INPUT TYPE='submit' NAME='promoCode' VALUE='$promoCode' /></center></td>";
+
+        echo "<td><center><INPUT TYPE='submit' NAME='eventCode' VALUE='$eventCode' /></center></td>";
         echo "<td>$name</td>";
+        echo "<td>$startDate</td>";
+        echo "<td>$endDate</td>";
         echo "<td>$description</td>";
-        echo "<td>$amountOff</td>";
-        echo "<td>$promoType</td>";
+        echo "<td>$adType</td>";
+
         echo '</tr>';
     }
+
     echo "</table>";
     echo "</form>";
     echo "</div>";
+
     echo <<<END
+
 END;
+
     ui_print_footer_with_main_menu_button();
 }
 ?>
