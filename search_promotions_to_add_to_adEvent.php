@@ -41,7 +41,7 @@ function ui_show_search_promotion_form()
 
     echo '<tr>';  //
     echo '<TD align="right"><input type="reset" value="Reset" /></TD>';
-    echo '<TD align="right"><input type="submit" value="Search Items"/></TD>';
+    echo '<TD align="right"><input type="submit" value="Search Promotions"/></TD>';
     echo '</tr>';
 
     echo "</table>";
