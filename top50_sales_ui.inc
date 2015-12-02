@@ -54,6 +54,7 @@ END;
         $salePrice = $row['SalePrice'];
         $savings = $row['Savings'];
 
+        echo $bgcolor1;
 
         echo "<td><b>$count</b></td>";
         echo "<td><b>$eventCode</b></td>";
