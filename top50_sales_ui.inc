@@ -1,20 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ryan
- * Date: 10/26/2015
- * Time: 11:38 AM
- */
+
 require('ui_utilities.inc');
-function ui_show_top50_sales_retrieved($message, $promotions_retrieved_result)
+function ui_show_top50_sales_retrieved($message, $top50_sales_retrieved_result)
 {
     //----------------------------------------------------------
     // Start the html page
-    ui_print_header("List of Promotion's and associated Items");
+    ui_print_header("List of the Top 50 Savings on Items in all Associated Events");
 
     // If the message is non-null and not an empty string print it
-    // message contains the lastname and firstname
-
     if ($message)
     {
         if ($message != "")
@@ -44,8 +37,9 @@ function ui_show_top50_sales_retrieved($message, $promotions_retrieved_result)
 END;
     $count = 0;
     $bgcolor1 = "<tr  bgcolor='#a9a9a9'>";
-    $bgcolor2 = "<tr  bgcolor='#FFFFFF'>"
-    while($row = mysql_fetch_assoc($promotions_retrieved_result))
+    $bgcolor2 = "<tr  bgcolor='#FFFFFF'>";
+
+    while($row = mysql_fetch_assoc($top50_sales_retrieved_result))
     {
         $eventCode = $row['EventCode'];
         $eventName = $row['Name'];
@@ -61,6 +55,7 @@ END;
         $savings = $row['Savings'];
 
 
+        echo "<td><b>$count</b></td>";
         echo "<td><b>$eventCode</b></td>";
         echo "<td><b>$eventName</b></td>";
         echo "<td ><b>$startDate</b></td>";
@@ -79,6 +74,7 @@ END;
         $temp = $bgcolor1;
         $bgcolor1 = $bgcolor2;
         $bgcolor2 = $temp;
+        $count++;
         //this is where a sub-table will go -mw
     }
 
