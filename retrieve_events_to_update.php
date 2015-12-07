@@ -22,14 +22,24 @@ function get_events_matching_search_criteria()
     $description = mysql_real_escape_string($_POST['description']);
     $type = mysql_real_escape_string($_POST['type']);
 
+    if(($startDate == null) || ($startDate == "")){
+        $startDate = "0000-00-00";
+    }
+    if(($endDate == null) || ($endDate == "")){
+        $endDate = "9999-99-99";
+    }
+
     $sql = "SELECT EventCode, AdEvent.Name, StartDate, EndDate, Description,AdType
         FROM   AdEvent
         WHERE  EventCode LIKE '%".$eventCode."%'
         AND AdEvent.Name LIKE '%".$eventName."%'
-        AND StartDate LIKE '%".$startDate."%'
-        AND EndDate LIKE '%".$endDate."%'
         AND Description LIKE '%".$description."%'
-        AND AdEvent.AdType LIKE '%".$type."%'";
+        AND AdEvent.AdType LIKE '%".$type."%'
+        AND((StartDate >= '$startDate' ".
+            "AND StartDate <= '$endDate') ".
+            "OR (EndDate >= '$startDate' ".
+            "AND EndDate
+        <= '$endDate')) ORDER BY StartDate";
 
     $error_message = "Could not successfully run query ($sql) from DB: ";
 

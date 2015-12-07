@@ -9,7 +9,12 @@ ui_show_search_event_form();
 function ui_show_search_event_form()
 {
     //Create an HTML document using the ECHO statements
-    ui_print_header("UPDATE EVENT");
+    $script = "<script type='text/javascript' src='Javascript/ValidateEvent.js'>  </script>";
+    $script1 = "<link rel=\"stylesheet\" href=\"http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css\">";
+    $script2 = "<script src=\"http://code.jquery.com/jquery-1.10.2.js\"></script>";
+    $script3 = "<script src=\"http://code.jquery.com/ui/1.11.4/jquery-ui.js\"></script>";
+    $args = array($script1, $script2, $script3, $script);
+    ui_print_header_with_head_elements("UPDATE EVENT", $args);
 
     echo "<div class='center'>";
     echo "<center>";
