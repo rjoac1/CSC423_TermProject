@@ -25,13 +25,12 @@ function ui_show_top50_sales_retrieved($message, $top50_sales_retrieved_result)
     <th>Start Date</th>
     <th>End Date</th>
     <th>Item Number</th>
-    <th>Item Name</th>
     <th>Item Description</th>
     <th>Item Category</th>
     <th>Item Department</th>
     <th>Item Purchase Cost</th>
     <th>Full Retail Price</th>
-    <ht>Sale Price</>
+    <th>Sale Price</th>
     <th>Savings</th>
     </tr>
 END;
