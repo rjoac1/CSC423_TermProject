@@ -8,7 +8,7 @@ $(document).ready(function() {
             dateFormat: "yy-mm-dd",
             changeYear: true
         });
-        $("#startDate, #endDate").keypress(function(event) {event.preventDefault();});
+        //$("#startDate, #endDate").keypress(function(event) {event.preventDefault();});
     });
 });
 
@@ -64,7 +64,7 @@ function validateBothDates(){
 function validateStartDate(){
     //Need to know form ID --MW
     var startDate = document.getElementById("startDate").value;
-    if(dataEnteredIntoField(startDate) && validateDateFormat(startDate) ){
+    if(dataEnteredIntoField(startDate) && validateDateFormat(startDate) && validateDateInRange(startDate)){
         //alert("data entered is valid");
         return true;
     }else if(!(dataEnteredIntoField(startDate))){
@@ -73,13 +73,13 @@ function validateStartDate(){
     }else if(!(validateDateFormat(startDate))){
         alert("Invalid date format for start date, please use the following format yyyy-mm-dd");
         return false;
-    }
+    }else{ return false; }
 }
 
 function validateEndDate(){
     //Need to know form ID --MW
     var endDate = document.getElementById("endDate").value;
-    if(dataEnteredIntoField(endDate) && validateDateFormat(endDate) && validateStartDateBeforeEndDate() ){
+    if(dataEnteredIntoField(endDate) && validateDateFormat(endDate) && validateDateInRange(endDate) && validateStartDateBeforeEndDate() ){
         return true;
     }else if(!(dataEnteredIntoField(endDate))){
         alert("Must enter a ending date for a promotion.");
@@ -90,7 +90,7 @@ function validateEndDate(){
     }else if(!(validateStartDateBeforeEndDate())){
         alert("End date must not be before the start date for an event.");
         return false;
-    }
+    }else{ return false; }
 }
 
 
@@ -122,9 +122,7 @@ function validateStartDateBeforeEndDate() {
         //alert("Start date before end date");
         return true;
     }else{ return false; }
-
-
-}/*
+}
 
 function validateDateInRange(dateString){
     var dateArray = dateString.split("-");

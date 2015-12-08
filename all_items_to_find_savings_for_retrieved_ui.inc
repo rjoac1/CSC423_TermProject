@@ -12,7 +12,7 @@ function ui_show_items_retrieved($message, $items_retrieved_result)
     //----------------------------------------------------------
     // Start the html page
     ui_print_header("FIND BIGGEST SAVINGS FOR AN ITEM");
-    echo "<center><h3>Select the Item you wish find the biggest savings for.</h3></center>";
+    echo "<center><h3>Select the Item you wish to find the biggest savings for.</h3></center>";
     // If the message is non-null and not an empty string print it
     // message contains the lastname and firstname
 
