@@ -101,7 +101,7 @@ END2;
         echo <<<END
         <table border="1" cellspacing="0" cellpadding="5px" bgcolor="white" width="100%">
         <tr>
-        <th>Promomotion Name</th>
+        <th>Promotion Name</th>
         <th>Description Name</th>
         <th>Amount Off</th>
         <th>Promotion Type</th>

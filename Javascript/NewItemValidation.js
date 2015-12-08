@@ -60,6 +60,8 @@ function setHiddenValues()
         {
                 oDepartmentHidden.value = (oDepartmentDDL.value == '') ? oDepartmentTextBox.value : oDepartmentDDL.value;
         }
+        oDepartmentHidden.value = oDepartmentHidden.value.toUpperCase();
+        oCategoryHidden.value = oCategoryHidden.value.toUpperCase();
         return validateItemData();
 }
 

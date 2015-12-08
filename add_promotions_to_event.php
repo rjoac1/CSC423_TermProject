@@ -48,7 +48,7 @@ function add_promotion_to_event()
                 $promoCode<br /><br />";
                 }
             } else {
-                $message .= "Promotion (PromoCode: %promoCode) already exists in Event (Event Code: $eventCode).<br /><br />";
+                $message .= "Promotion (PromoCode: $promoCode) already exists in Event (Event Code: $eventCode).<br /><br />";
             }
         }
     }
