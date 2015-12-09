@@ -56,7 +56,14 @@ END2;
         echo "<td><center><INPUT TYPE='submit' NAME='promoCode' VALUE='$promoCode' /></center></td>";
         echo "<td>$name</td>";
         echo "<td>$description</td>";
-        echo "<td>$amountOff</td>";
+        if($promoType == "Percent")
+        {
+            $value = $amountOff*100;
+            echo "<td>$value%</td>";
+        }
+        else{
+            echo "<td>$amountOff</td>";
+        }
         echo "<td>$promoType</td>";
 
         echo '</tr>';

@@ -34,7 +34,7 @@ function ui_show_new_promotion_form()
 
     echo '<tr>';  //
     echo '<TD><SPAN ALIGN=RIGHT>Amount Off:</SPAN></TD>';
-    echo '<TD><INPUT ID="promotionValue" NAME="promotionValue" TYPE="text" SIZE=50/></TD>';
+    echo '<TD><INPUT ID="amountOff" NAME="amountOff" TYPE="text" SIZE=50/></TD>';
     echo '</tr>';
 
     echo '<tr>';  //

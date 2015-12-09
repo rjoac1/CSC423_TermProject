@@ -55,18 +55,33 @@ function checkDescription() {
 
 function checkAmountOff(){
 
-    var amountOff = document.getElementById("promotionValue").value;
+    var amountOff = document.getElementById("amountOff").value;
+    var promoType = document.getElementById("promotionType").value;
     //alert("Amount Off: " + amountOff);
 
     if(amountOff.length == 0 || amountOff == ""){
         alert("Please enter in a value for the amount off");
         return false
     }
-    //Changed regular expression here to require number to be 0.00 form.
-    //The Project description stated otherwise but the database had values in the 0.00 form.
-    //Asked mitra about this and he said it was our choice. Since we need a common form for the calculations later on, Van and I decided to go with this form. ~RJ and VL
-    else if(amountOff.match(/^[\d]+\.[\d]{2}$/) == null) {
-        alert("Amount off for promotion must be a numberical value rounded to two decimal places. (i.e. 0.00)");
+    else if((promoType == "Dollar") && (amountOff.match(/^[\d]+$/)!= null))
+    {
+        document.getElementById("amountOff").value = amountOff + ".00";
+        return true;
+    }//begin fixing here
+    else if((promoType == "Percent") && (amountOff.match(/^[\d]+$/)!= null))
+    {
+        if((amountOff>100) || (amountOff<0))
+        {
+            alert("Percent amount off must be between 0 and 100");
+            return false;
+        }
+        document.getElementById("amountOff").value = amountOff/100;
+        return true;
+    }
+    else if(amountOff.match(/^[\d]+\.[\d][\d]?$/) == null) {
+        alert("Amount off for promotion must be a numberical value. If using a decimal, value must be rounded to two" +
+            " decimal" +
+            " places. (i.e. 0.00)");
         return false;
     }
     return true;

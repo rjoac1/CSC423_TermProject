@@ -46,7 +46,14 @@ END;
         echo "<td><b>$promoCode</b></td>";
         echo "<td><b>$name</b></td>";
         echo "<td ><b>$description</b></td>";
-        echo "<td><b>$amountOff</b></td>";
+        if($promoType == "Percent")
+        {
+            $value = $amountOff*100;
+            echo "<td>$value%</td>";
+        }
+        else{
+            echo "<td>$amountOff</td>";
+        }
         echo "<td><b>$promoType</b></td>";
 
         echo '</tr>';

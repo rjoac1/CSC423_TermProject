@@ -34,7 +34,8 @@ function insert_promotion()
     $promotionNumber = mysql_real_escape_string($_POST['promotionNumber']);
     $promotionName = mysql_real_escape_string($_POST['promotionName']);
     $promotionDescription = mysql_real_escape_string($_POST['promotionDescription']);
-    $promotionValue = mysql_real_escape_string($_POST['promotionValue']);
+    $promotionValue = mysql_real_escape_string($_POST['amountOff']);
+    $promotionValue = round($promotionValue, 2);
     $promotionType = mysql_real_escape_string($_POST['promotionType']);
 
     // Create a String consisting of the SQL command. Remember that

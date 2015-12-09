@@ -143,8 +143,15 @@ function checkPurchaseCost()
                 alert("Please enter a Purchase Cost for the Item.");
                 return false;
         }
+        else if(enteredPurchaseCost.match(/^[\d]+$/)!= null){
+                document.getElementById("purchaseCost").value = enteredPurchaseCost + ".00";
+                return true;
+        }
         else if(enteredPurchaseCost.match(/^[\d]+\.[\d]{2}$/) == null) {
-                alert("Purchase Cost for Item must be a number rounded to two decimal places. (i.e. 0.00)");
+                alert("Purchase Cost for Item must be a number. If using a decimal, the value must be rounded to two" +
+                    " decimal" +
+                    " places." +
+                    " (i.e. 0.00)");
                 return false;
         }
         return true;
@@ -158,6 +165,10 @@ function checkRetailPrice()
         {
                 alert("Please enter a Retail Price for the Item.");
                 return false;
+        }
+        else if(enteredRetailPrice.match(/^[\d]+$/)!= null){
+                document.getElementById("retailPrice").value = enteredRetailPrice + ".00";
+                return true;
         }
         else if(enteredRetailPrice.match(/^[\d]+\.[\d]{2}$/) == null) {
                 alert("Retail Price for Item must be a number rounded to two decimal places. (i.e. 0.00)");
