@@ -44,7 +44,9 @@ function update_item()
     }
     else
     {
-        $message .= "Data for Item with ItemNumber: ".$itemNumber." updated successfully. <hr />";
+        $message = "Data for Item updated successfully. <br />Item Number: $itemNumber<br />Item Description: $itemDescription
+<br />Category: $category <br />Department Name: $deptName<br />Purchase Cost: $purchCost<br
+/>Retail Price: $retail<br /><br />";
     }
 
     $getPromoItemsStmt = "SELECT * FROM PromotionItem WHERE ItemNumber = '$itemNumber'";

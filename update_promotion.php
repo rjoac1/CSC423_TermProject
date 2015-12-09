@@ -44,7 +44,10 @@ function update_promotion()
     }
     else
     {
-        $message .= "Data for Promotion with PromoCode: ".$promoCode." updated successfully. <hr />";
+        $message = "Data for Promotion updated successfully.<br />PromoCode: $promoCode<br />Promotion Description:
+$description <br />Promotion
+Type:
+$promoType <br />Promotion Name: $name <br />Amount Off: $amountOff<br /><br />";
     }
 
     $getPromoItemsStmt = "SELECT * FROM PromotionItem WHERE PromoCode = '$promoCode'";

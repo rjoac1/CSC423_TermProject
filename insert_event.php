@@ -53,7 +53,7 @@ $endDate<br />". mysql_error();
     else
     {
         $message = "Data for Event inserted successfully.<br />Event Name: $eventName<br />Start Date: $startDate<br />End
-Date: $endDate<br />";
+Date: $endDate<br />Description: $description<br />Type: $type<br />";
 
     }
 
