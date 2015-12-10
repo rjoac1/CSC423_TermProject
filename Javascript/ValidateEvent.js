@@ -84,7 +84,6 @@ function validateStartDate(){
 function validateEndDate(){
     //Need to know form ID --MW
     var endDate = document.getElementById("endDate").value;
-    alert(endDate);
     if(dataEnteredIntoField(endDate) && validateDateFormat(endDate) && validateDateInRange(endDate) && validateStartDateBeforeEndDate() ){
         return true;
     }else if(!(dataEnteredIntoField(endDate))){
