@@ -26,7 +26,6 @@ function update_promotion()
     $name = mysql_real_escape_string($_POST["promotionName"]);
     $description = mysql_real_escape_string($_POST["promotionDescription"]);
     $amountOff = mysql_real_escape_string($_POST["amountOff"]);
-    $amountOff = round($amountOff, 2);
     $promoType = mysql_real_escape_string($_POST["promotionType"]);
 
     $updateStmt = "update Promotion

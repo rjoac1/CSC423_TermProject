@@ -36,7 +36,7 @@ function validateEventCode(){
 function isEventCodeValid(eventCode){
     if(!(eventCode.match(/^[A-Z]{3}\d{8}[A-Z]$/))) {
         alert("Event codes must be 3 upper case characters followed by the " +
-            "numeric date and lastly an uppercase identifier character, " +
+            "numeric date(8 digits) and lastly an uppercase identifier character, " +
             "such as ABC01022015A");
         return false;
     }else if(eventCode.match(/^[A-Z]{3}\d{8}[A-Z]$/)){ return true; }
@@ -68,7 +68,7 @@ function validateStartDate(){
         //alert("data entered is valid");
         return true;
     }else if(!(dataEnteredIntoField(startDate))){
-        alert("Must enter a starting date for a promotion.");
+        alert("Must enter a starting date for the event.");
         return false;
     }else if(!(validateDateFormat(startDate))){
         alert("Invalid date format for start date, please use the following format yyyy-mm-dd");
@@ -82,7 +82,7 @@ function validateEndDate(){
     if(dataEnteredIntoField(endDate) && validateDateFormat(endDate) && validateDateInRange(endDate) && validateStartDateBeforeEndDate() ){
         return true;
     }else if(!(dataEnteredIntoField(endDate))){
-        alert("Must enter a ending date for a promotion.");
+        alert("Must enter an end date for the event.");
         return false;
     }else if(!(validateDateFormat(endDate))){
         alert("Invalid date format for end date, please use the following format yyyy-mm-dd");

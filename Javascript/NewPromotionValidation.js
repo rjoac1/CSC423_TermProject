@@ -78,6 +78,11 @@ function checkAmountOff(){
         document.getElementById("amountOff").value = amountOff/100;
         return true;
     }
+    else if((promoType == "Percent") && (amountOff.match(/^0\.[\d][\d]?$/) == null)){
+        alert("If promo type is percent and entering amount off as a decimal, value for amount off must be a value" +
+            " greater than zero and less than 1.");
+        return false;
+    }
     else if(amountOff.match(/^[\d]+\.[\d][\d]?$/) == null) {
         alert("Amount off for promotion must be a numberical value. If using a decimal, value must be rounded to two" +
             " decimal" +
