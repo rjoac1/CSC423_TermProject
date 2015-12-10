@@ -73,12 +73,18 @@ function validateStartDate(){
     }else if(!(validateDateFormat(startDate))){
         alert("Invalid date format for start date, please use the following format yyyy-mm-dd");
         return false;
-    }else{ return false; }
+    }
+    else if(!(validateDateInRange(startDate))){
+        alert("Start date is not an actual date.");
+        return false;
+    }
+    else{ return false; }
 }
 
 function validateEndDate(){
     //Need to know form ID --MW
     var endDate = document.getElementById("endDate").value;
+    alert(endDate);
     if(dataEnteredIntoField(endDate) && validateDateFormat(endDate) && validateDateInRange(endDate) && validateStartDateBeforeEndDate() ){
         return true;
     }else if(!(dataEnteredIntoField(endDate))){
@@ -86,6 +92,10 @@ function validateEndDate(){
         return false;
     }else if(!(validateDateFormat(endDate))){
         alert("Invalid date format for end date, please use the following format yyyy-mm-dd");
+        return false;
+    }
+    else if(!(validateDateInRange(endDate))){
+        alert("End date is not an actual date.");
         return false;
     }else if(!(validateStartDateBeforeEndDate())){
         alert("End date must not be before the start date for an event.");

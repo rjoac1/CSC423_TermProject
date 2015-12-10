@@ -45,7 +45,9 @@ function update_event()
     }
     else
     {
-        $message = "Data for Event inserted successfully.<br />Event Name: $name<br />Start Date: $startDate<br />End
+        $message = "Data for Event updated successfully.<br />Event Code: $eventCode <br />Event Name: $name<br />Start
+Date:
+$startDate<br />End
 Date: $endDate<br />Description: $description<br />Type: $type<br /><br />";
     }
 
