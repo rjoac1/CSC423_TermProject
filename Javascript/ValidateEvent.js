@@ -148,8 +148,11 @@ function validateDateInRange(dateString){
     //February
     else if (dateArray[1] == 2){
         return validateDateDay(dateArray[2], 29);
-
+    }else{
+        alert("Invalid month data entered.");
+        return false;
     }
+
 }
 
 function validateDateDay(day, upperBound){
