@@ -63,11 +63,21 @@ function checkAmountOff(){
         alert("Please enter in a value for the amount off");
         return false
     }
+    else if((amountOff.match(/^\.[\d][\d]?$/) != null)){
+        if((amountOff.match(/^\.[\d]$/) != null)){
+            document.getElementById("amountOff").value = "0" + amountOff + "0";
+            return true;
+        }
+        else{
+            document.getElementById("amountOff").value = "0" + amountOff;
+            return true;
+        }
+    }
     else if((promoType == "Dollar") && (amountOff.match(/^[\d]+$/)!= null))
     {
         document.getElementById("amountOff").value = amountOff + ".00";
         return true;
-    }//begin fixing here
+    }
     else if((promoType == "Percent") && (amountOff.match(/^[\d]+$/)!= null))
     {
         if((amountOff>100) || (amountOff<0))
@@ -88,6 +98,10 @@ function checkAmountOff(){
             " decimal" +
             " places. (i.e. 0.00)");
         return false;
+    }
+    else if(amountOff.match(/^[\d]+\.[\d]$/) != null){
+        document.getElementById("amountOff").value = amountOff + "0";
+        return true;
     }
     return true;
 
